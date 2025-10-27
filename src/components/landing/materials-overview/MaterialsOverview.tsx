@@ -1,0 +1,111 @@
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
+
+export default component$(() => {
+	useStylesScoped$(`
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			gap: 1rem;
+		}
+
+		.grid-container > a {
+			display: block;
+			text-decoration: none;
+			height: 200px;
+		}
+
+		.grid-container > div {
+			background: #4b6cb7;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100px;
+		}
+
+		.slot {
+			border: 1px solid brown;
+			height: 200px;
+			color: white;
+			font-weight: bold;
+			font-size: 1.1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			filter: saturate(0%);
+		}
+
+		.slot:hover {
+			font-size: 1.3rem;
+			transition: all 0.3s ease;
+			filter: saturate(100%);
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+		}
+
+		/* SOIL */
+		.grid-container > a > .soil {
+			background-image: url("/images/img_soil.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* GRAVEL */
+		.grid-container > a > .gravel {
+			background-image: url("/images/img_gravel.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* STONE */
+		.grid-container > a > .stone {
+			background-image: url("/images/img_stone.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* MULCH */
+		.grid-container > a > .mulch {
+			background-image: url("/images/img_mulch.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+		}
+	`);
+
+	return (
+		<div class="p-4 bg-orange-100">
+			<h3 class="font-bold text-2xl mb-3">Materials Overview</h3>
+			<div>We carry quite a few materials, so to help you find what you're looking for we've arranged them in categories. Choose a category to get started.</div>
+			{/* Categories: Soil, Gravel, Stone, and Mulch */}
+			<div class="grid-container">
+				<a href="/materials/soil">
+					<div class="slot soil">Soil</div>
+				</a>
+				<a href="/materials/gravel">
+					<div class="slot gravel">Gravel</div>
+				</a>
+				<a href="/materials/stone">
+					<div class="slot stone">Stone</div>
+				</a>
+				<a href="/materials/mulch">
+					<div class="slot mulch">Mulch</div>
+				</a>
+			</div>
+
+			<a href="/materials">			
+				<div class="flex justify-center items-center font-bold mt-3 border-2 border-dashed border-fuchsia-600">
+					View More Materials
+				</div>
+			</a>
+		</div>
+	)
+})
