@@ -5,10 +5,11 @@ import EagleCarports from "~/components/landing/eagle-carports/EagleCarports";
 import ExploreCalculator from "~/components/landing/explore-calculator/ExploreCalculator";
 import NoticeBoard from "~/components/landing/notice-board/NoticeBoard";
 import WelcomeMessage from "~/components/landing/welcome-message/WelcomeMessage";
+import HelpCenter from "~/components/landing/help-center/HelpCenter";
 
 export default component$(() => {
   return (
-    <section class="max-w-6xl mx-auto border-2 border-dashed border-amber-500">
+    <section class="space-y-4">
       {/* Notice Board */}
       <div>
         <NoticeBoard />
@@ -32,6 +33,11 @@ export default component$(() => {
       {/* Eagle Carports */}
       <div>
         <EagleCarports />
+      </div>
+
+      {/* Help Center */}
+      <div>
+        <HelpCenter />
       </div>
     </section>
   );

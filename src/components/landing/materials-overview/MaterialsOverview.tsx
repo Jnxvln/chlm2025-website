@@ -26,6 +26,7 @@ export default component$(() => {
 
 		.slot {
 			border: 1px solid brown;
+			border-radius: 8px;
 			height: 200px;
 			color: white;
 			font-weight: bold;
@@ -84,7 +85,7 @@ export default component$(() => {
 	return (
 		<div class="p-4 bg-orange-100">
 			<h3 class="font-bold text-2xl mb-3">Materials Overview</h3>
-			<div>We carry quite a few materials, so to help you find what you're looking for we've arranged them in categories. Choose a category to get started.</div>
+			<div class="my-4">To help you find what you're looking for, we've grouped our materials into categories:</div>
 			{/* Categories: Soil, Gravel, Stone, and Mulch */}
 			<div class="grid-container">
 				<a href="/materials/soil">
@@ -102,7 +103,7 @@ export default component$(() => {
 			</div>
 
 			<a href="/materials">			
-				<div class="flex justify-center items-center font-bold mt-3 border-2 border-dashed border-fuchsia-600">
+				<div class="flex justify-center items-center font-bold my-6 bg-[#5f4834] hover:bg-[#7e6046] transition-colors duration-100 text-white text-2xl p-2 rounded-lg">
 					View More Materials
 				</div>
 			</a>

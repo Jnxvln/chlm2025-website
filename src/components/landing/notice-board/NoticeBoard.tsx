@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
 	return (
-		<div class="p-4 bg-green-100">
+		<div class="p-4 bg-white">
 			<h2 class="font-bold text-2xl mb-3">Notices</h2>
 			<div>Site notices will appear here, if any.</div>
 			<ul class="list-disc">

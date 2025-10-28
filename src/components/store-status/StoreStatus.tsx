@@ -12,7 +12,7 @@ export default component$(() => {
 	const storeOpen = useSignal(true)
 	return (
 		<div class="flex items-center">
-			<div class="pr-2 font-bold">Status:</div>
+			<div class="pr-2 font-bold text-white">Open:</div>
 			<Indicator isOpen={storeOpen.value} />
 		</div>
 	)
