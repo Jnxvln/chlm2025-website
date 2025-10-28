@@ -15,7 +15,7 @@ export default component$(() => {
 			<div>
 				<Slot />
 			</div>
-			<footer class="bg-[#1a1f24] text-white text-center p-4 -mx-2 sm:-mx-4">
+			<footer class="bg-[#1a1f24] text-white text-center p-4">
 				<div class="flex flex-col items-center gap-3">
 					<button
 						onClick$={scrollToTop}

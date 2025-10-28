@@ -9,7 +9,7 @@ import HelpCenter from "~/components/landing/help-center/HelpCenter";
 
 export default component$(() => {
   return (
-    <section class="space-y-4">
+    <section>
       {/* Notice Board */}
       <div>
         <NoticeBoard />
