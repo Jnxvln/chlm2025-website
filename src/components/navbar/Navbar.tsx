@@ -1,8 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
+import './navbar.css'
 
 export default component$(() => {
 	const location = useLocation();
+	const isSticky = useSignal(false);
 
 	const navLinks = [
 		{ href: "/", label: "Home" },
@@ -19,8 +21,18 @@ export default component$(() => {
 		return location.url.pathname.startsWith(href);
 	};
 
+	// Add scroll tracking
+	useVisibleTask$(({ cleanup }) => {
+	const handleScroll = () => {
+		isSticky.value = window.scrollY > 100; // Adjust threshold as needed
+	};
+	
+	window.addEventListener('scroll', handleScroll);
+	cleanup(() => window.removeEventListener('scroll', handleScroll));
+	});
+
 	return (
-		<nav class="bg-gradient-to-r from-[#291c0d] via-[#554128] to-[#352512] shadow-lg sticky top-0 z-50 mb-4">
+		<nav class={`navbar ${isSticky.value ? 'navbar-sticky' : ''} bg-gradient-to-r from-[#291c0d] via-[#554128] to-[#352512] shadow-lg sticky top-0 z-[1000] mb-4`}>
 			<div class="max-w-6xl mx-auto px-2 sm:px-4">
 				<div class="flex flex-wrap justify-center gap-1 sm:gap-2 p-2">
 					{navLinks.map((link) => {
@@ -39,6 +51,13 @@ export default component$(() => {
 							</Link>
 						);
 					})}
+					<button
+						class={`navbar-top-button ${isSticky.value ? 'navbar-top-visible' : ''}`}
+						onClick$={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+						aria-label="Scroll to top"
+					>
+						↑ Top
+					</button>
 				</div>
 			</div>
 		</nav>
