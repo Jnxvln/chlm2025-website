@@ -1,5 +1,6 @@
 import { component$, Slot, $ } from "@builder.io/qwik";
 import SiteHeader from "~/components/site-header/site-header";
+import Navbar from "~/components/navbar/Navbar";
 
 export default component$(() => {
 	const scrollToTop = $(() => {
@@ -12,6 +13,7 @@ export default component$(() => {
 	return (
 		<div class="max-w-6xl mx-auto px-2 sm:px-4">
 			<SiteHeader />
+			<Navbar />
 			<div>
 				<Slot />
 			</div>
