@@ -88,16 +88,16 @@ export default component$(() => {
 			<div class="my-4">To help you find what you're looking for, we've grouped our materials into categories:</div>
 			{/* Categories: Soil, Gravel, Stone, and Mulch */}
 			<div class="grid-container">
-				<a href="/materials/soil">
+				<a href="/materials?category=soil">
 					<div class="slot soil">Soil</div>
 				</a>
-				<a href="/materials/gravel">
+				<a href="/materials?category=gravel">
 					<div class="slot gravel">Gravel</div>
 				</a>
-				<a href="/materials/stone">
+				<a href="/materials?category=stone">
 					<div class="slot stone">Stone</div>
 				</a>
-				<a href="/materials/mulch">
+				<a href="/materials?category=mulch">
 					<div class="slot mulch">Mulch</div>
 				</a>
 			</div>

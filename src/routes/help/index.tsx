@@ -1,6 +1,7 @@
 import { component$, useSignal, useComputed$, $, useVisibleTask$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import './help-center.css';
+import helpData from '~/data/help.json';
 
 // Type definitions
 interface FAQItem {
@@ -29,80 +30,14 @@ export const HelpCenter = component$(() => {
   const scrollY = useSignal(0);
   const showScrollTop = useSignal(false);
 
-  // FAQ Data - Replace with your actual API call
-  const faqs = useSignal<FAQItem[]>([
-    {
-      id: 1,
-      question: "What are your hours of operation?",
-      answer: "We are open Monday through Friday from 7:30 AM to 5:00 PM, and Saturday from 8:00 AM to 4:00 PM. We are closed on Sundays and major holidays.",
-      categories: ['general'],
-      relatedLinks: [
-        { text: "View Holiday Schedule", url: "/holidays" },
-        { text: "Contact Us", url: "/contact" }
-      ]
-    },
-    {
-      id: 2,
-      question: "Do you offer delivery services?",
-      answer: "Yes, we offer delivery services for bulk materials and palletized stone. Delivery fees vary based on distance and material quantity. Please call for a delivery quote.",
-      categories: ['delivery'],
-      relatedLinks: [
-        { text: "Delivery Zones", url: "/delivery-zones" },
-        { text: "Schedule Delivery", url: "/schedule-delivery" }
-      ]
-    },
-    {
-      id: 3,
-      question: "What payment methods do you accept?",
-      answer: "We accept cash, check, and all major credit cards (Visa, MasterCard, American Express, and Discover).",
-      categories: ['payment'],
-    },
-    {
-      id: 4,
-      question: "How do I calculate how much material I need?",
-      answer: "Use our online calculator to determine the amount of material needed for your project. You can also refer to our coverage charts below or call us for assistance.",
-      categories: ['coverage'],
-      relatedLinks: [
-        { text: "Material Calculator", url: "/calculator" },
-        { text: "Coverage Charts", url: "#coverage" }
-      ]
-    },
-    {
-      id: 5,
-      question: "Can you load my truck or trailer?",
-      answer: "Yes, we provide loading services. Please refer to our loading information section below for weight limits and recommendations based on your vehicle type.",
-      categories: ['loading'],
-      relatedLinks: [
-        { text: "Loading Information", url: "#loading" }
-      ]
-    }
-  ]);
+  // FAQ Data - Loaded from JSON
+  const faqs = useSignal<FAQItem[]>(helpData.faqs as FAQItem[]);
 
-  // Coverage data
-  const coverageFlagstone: CoverageItem[] = [
-    { id: 1, thickness: `2" - 2.5"`, coverage: `70 - 80 sqft/ton` },
-    { id: 2, thickness: `1" - 1.5"`, coverage: `110 - 125 sqft/ton` },
-    { id: 3, thickness: `1/2" - 3/4"`, coverage: `130 - 150 sqft/ton` },
-  ];
-
-  const coverageChoppedStone: CoverageItem[] = [
-    { id: 1, size: `4"x4"`, placement: 'with mortar', squareFeet: `40 sqft/ton`, linearFeet: `100+ ft/ton` },
-    { id: 2, size: `4"x4"`, placement: 'dry stack', squareFeet: `35 sqft/ton`, linearFeet: `` },
-    { id: 3, size: `4"x6"`, placement: 'with mortar', squareFeet: `35 sqft/ton`, linearFeet: `60+ ft/ton` },
-    { id: 4, size: `4"x6"`, placement: 'dry stack', squareFeet: `30 sqft/ton`, linearFeet: `` },
-    { id: 5, size: `4"x8"`, placement: 'with mortar', squareFeet: `30 sqft/ton`, linearFeet: `35+ ft/ton` },
-    { id: 6, size: `4"x8"`, placement: 'dry stack', squareFeet: `25 sqft/ton`, linearFeet: `` },
-  ];
-
-  const coverageRiverRock: CoverageItem[] = [
-    { id: 1, thickness: `2" - 3"`, coverage: `35 - 40 sqft/ton` },
-    { id: 2, thickness: `4" - 8"`, coverage: '110 - 125 sqft/ton' },
-  ];
-
-  const coverageWaterfall: CoverageItem[] = [
-    { id: 1, thickness: `1" - 3"`, coverage: '75 sqft/ton' },
-    { id: 2, thickness: `4" - 8"`, coverage: '35-40 sqft/ton' },
-  ];
+  // Coverage data - Loaded from JSON
+  const coverageFlagstone: CoverageItem[] = helpData.coverage.flagstone as CoverageItem[];
+  const coverageChoppedStone: CoverageItem[] = helpData.coverage.choppedStone as CoverageItem[];
+  const coverageRiverRock: CoverageItem[] = helpData.coverage.riverRock as CoverageItem[];
+  const coverageWaterfall: CoverageItem[] = helpData.coverage.waterfall as CoverageItem[];
 
   // Filtered FAQs based on search
   const filteredFaqs = useComputed$(() => {
@@ -500,7 +435,7 @@ export const HelpCenter = component$(() => {
           <p>
             The best we can do is use the same formula (or the calculator) and add an 
             additional 1/2yd - 1yd. Basically, the larger the material, the lesser the 
-            square-foot coverage.
+            square-foot coverage received since our bucket is a fixed size.
           </p>
         </div>
       </section>
