@@ -1,6 +1,22 @@
 import { component$, Slot, $ } from "@builder.io/qwik";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import SiteHeader from "~/components/site-header/site-header";
 import Navbar from "~/components/navbar/Navbar";
+import { prisma } from "~/lib/prisma";
+
+export const useStoreSettings = routeLoader$(async () => {
+  const settings = await prisma.settings.findFirst({
+    select: {
+      storeOpen: true,
+      storeClosureType: true,
+      storeDefaultClosureReason: true,
+      storeDefaultClosureReasonWeather: true,
+      storeDefaultClosureReasonHoliday: true,
+      storeCustomClosureMessage: true,
+    },
+  });
+  return settings;
+});
 
 export default component$(() => {
 	const scrollToTop = $(() => {

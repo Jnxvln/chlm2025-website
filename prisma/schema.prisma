@@ -1,0 +1,281 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id            Int             @id @default(autoincrement())
+  firstName     String
+  lastName      String
+  companyName   String?
+  phone1        String
+  phone2        String?
+  email1        String?
+  email2        String?
+  notes         String?
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @default(now())
+  WaitlistEntry WaitlistEntry[]
+}
+
+model Driver {
+  id                Int       @id @default(autoincrement())
+  firstName         String
+  lastName          String
+  defaultTruck      String?
+  endDumpPayRate    Float
+  flatBedPayRate    Float
+  nonCommissionRate Float
+  dateHired         DateTime? @db.Date
+  dateReleased      DateTime? @db.Date
+  isActive          Boolean   @default(true)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @default(now())
+  Workday           Workday[]
+}
+
+model FreightRoute {
+  id                  Int            @id @default(autoincrement())
+  destination         String
+  freightCost         Float
+  notes               String?
+  isActive            Boolean        @default(true)
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @default(now())
+  vendorLocationId    Int
+  deactivatedByParent Boolean        @default(false)
+  toYard              Boolean        @default(false)
+  VendorLocation      VendorLocation @relation(fields: [vendorLocationId], references: [id])
+  Haul                Haul[]
+
+  @@index([vendorLocationId, toYard])
+}
+
+model Haul {
+  id              Int            @id @default(autoincrement())
+  dateHaul        DateTime
+  truck           String
+  customer        String
+  chInvoice       String?
+  loadType        String
+  loadRefNum      String?
+  vendorProductId Int?
+  freightRouteId  Int?
+  rateMetric      String
+  rate            Float
+  quantity        Float
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @default(now())
+  workdayId       Int
+  createdById     Int
+  loadTime        String         @default("08:00")
+  flatbedFrom     String?
+  flatbedMaterial String?
+  flatbedTo       String?
+  User            User           @relation(fields: [createdById], references: [id])
+  FreightRoute    FreightRoute?  @relation(fields: [freightRouteId], references: [id])
+  VendorProduct   VendorProduct? @relation(fields: [vendorProductId], references: [id])
+  Workday         Workday        @relation(fields: [workdayId], references: [id])
+}
+
+model Material {
+  id                  Int              @id @default(autoincrement())
+  name                String
+  stock               String
+  image               String?
+  bin                 String?
+  size                String?
+  description         String?
+  notes               String?
+  isFeatured          Boolean          @default(false)
+  isTruckable         Boolean          @default(false)
+  isActive            Boolean          @default(true)
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @default(now())
+  categoryId          Int
+  deactivatedByParent Boolean          @default(false)
+  MaterialCategory    MaterialCategory @relation(fields: [categoryId], references: [id])
+}
+
+model MaterialCategory {
+  id        Int        @id @default(autoincrement())
+  name      String
+  isActive  Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now())
+  Material  Material[]
+}
+
+model Notice {
+  id          Int        @id @default(autoincrement())
+  content     String
+  displayDate DateTime
+  type        NoticeType @default(info)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @default(now())
+  URL         URL[]
+}
+
+model Settings {
+  id                               Int       @id @default(autoincrement())
+  storeOpen                        Boolean   @default(true)
+  storeDefaultClosureReason        String    @default("C&H is currently closed")
+  storeDefaultClosureReasonWeather String    @default("C&H is closed due to weather")
+  storeDefaultClosureReasonHoliday String    @default("C&H is closed for the holiday")
+  storeDisplayInventoryStatus      Boolean   @default(true)
+  operatingHoursMonFriStart        String    @default("08:00")
+  operatingHoursMonFriEnd          String    @default("17:00")
+  operatingHoursSatStart           String    @default("08:00")
+  operatingHoursSatEnd             String    @default("12:00")
+  operatingHoursSunStart           String    @default("CLOSED")
+  operatingHoursSunEnd             String    @default("CLOSED")
+  driverDefaultNCPayRate           Decimal   @default(0.00) @db.Decimal(10, 2)
+  driverDefaultHolidayPayRate      Decimal   @default(0.00) @db.Decimal(10, 2)
+  userDefaultColorTheme            String    @default("default")
+  createdAt                        DateTime  @default(now())
+  updatedAt                        DateTime  @default(now())
+  storeClosureType                 String    @default("default")
+  storeCustomClosureMessage        String?
+  offDutyReasonBereavement         String    @default("Bereavement")
+  offDutyReasonMaintenance         String    @default("Maintenance")
+  offDutyReasonNoWork              String    @default("No Work")
+  offDutyReasonPersonal            String    @default("Personal")
+  offDutyReasonSick                String    @default("Sick")
+  offDutyReasonVacation            String    @default("Vacation")
+  offDutyReasonWeather             String    @default("Weather")
+  storeClosedAt                    DateTime?
+}
+
+model StoreNotice {
+  id            Int        @id @default(autoincrement())
+  title         String
+  content       String
+  type          NoticeType @default(info)
+  createdAt     DateTime   @default(now())
+  displayUntil  DateTime
+  showCreatedAt Boolean    @default(true)
+  isActive      Boolean    @default(true)
+  updatedAt     DateTime   @default(now())
+}
+
+model URL {
+  id          Int      @id @default(autoincrement())
+  url         String
+  isExternal  Boolean  @default(true)
+  noticeId    Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  displayText String
+  Notice      Notice?  @relation(fields: [noticeId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id      Int       @id @default(autoincrement())
+  email   String    @unique
+  name    String?
+  Haul    Haul[]
+  Workday Workday[]
+}
+
+model Vendor {
+  id                  Int              @id @default(autoincrement())
+  name                String
+  shortName           String
+  chtFuelSurcharge    Float
+  vendorFuelSurcharge Float
+  isActive            Boolean          @default(true)
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @default(now())
+  VendorLocation      VendorLocation[]
+  VendorProduct       VendorProduct[]
+}
+
+model VendorLocation {
+  id                  Int             @id @default(autoincrement())
+  name                String
+  isActive            Boolean         @default(true)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @default(now())
+  vendorId            Int
+  deactivatedByParent Boolean         @default(false)
+  FreightRoute        FreightRoute[]
+  Vendor              Vendor          @relation(fields: [vendorId], references: [id])
+  VendorProduct       VendorProduct[]
+}
+
+model VendorProduct {
+  id                  Int             @id @default(autoincrement())
+  name                String
+  productCost         Float
+  notes               String
+  isActive            Boolean         @default(true)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @default(now())
+  vendorId            Int
+  vendorLocationId    Int
+  deactivatedByParent Boolean         @default(false)
+  Haul                Haul[]
+  Vendor              Vendor          @relation(fields: [vendorId], references: [id])
+  VendorLocation      VendorLocation  @relation(fields: [vendorLocationId], references: [id])
+  WaitlistEntry       WaitlistEntry[]
+}
+
+model WaitlistEntry {
+  id                 Int            @id @default(autoincrement())
+  contactedAt        DateTime?
+  notes              String?
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @default(now())
+  contactId          Int
+  customResourceName String?
+  quantityUnit       String?
+  resourceType       String
+  vendorProductId    Int?
+  quantity           Int
+  status             WaitlistStatus @default(waiting)
+  Contact            Contact        @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  VendorProduct      VendorProduct? @relation(fields: [vendorProductId], references: [id])
+
+  @@index([contactId])
+  @@index([status])
+  @@index([vendorProductId])
+}
+
+model Workday {
+  id            Int      @id @default(autoincrement())
+  date          DateTime
+  chHours       Float
+  ncHours       Float
+  ncReasons     String?
+  notes         String?
+  offDuty       Boolean  @default(false)
+  offDutyReason String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now())
+  driverId      Int
+  createdById   Int
+  Haul          Haul[]
+  User          User     @relation(fields: [createdById], references: [id])
+  Driver        Driver   @relation(fields: [driverId], references: [id])
+
+  @@unique([driverId, date])
+}
+
+enum NoticeType {
+  info
+  warning
+  danger
+  success
+}
+
+enum WaitlistStatus {
+  waiting
+  contacted
+  fulfilled
+  cancelled
+}

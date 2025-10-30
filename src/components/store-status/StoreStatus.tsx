@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { useSignal } from "@builder.io/qwik";
+import { useStoreSettings } from "~/routes/layout";
 
 const OPEN_COLOR = "bg-green-500"
 const CLOSE_COLOR = "bg-red-500"
@@ -9,11 +9,13 @@ const Indicator = component$(({ isOpen }: { isOpen: boolean }) => (
 ))
 
 export default component$(() => {
-	const storeOpen = useSignal(true)
+	const settings = useStoreSettings();
+	const storeOpen = settings.value?.storeOpen ?? true;
+
 	return (
 		<div class="flex items-center">
 			<div class="pr-2 font-bold text-white">Open:</div>
-			<Indicator isOpen={storeOpen.value} />
+			<Indicator isOpen={storeOpen} />
 		</div>
 	)
 })
