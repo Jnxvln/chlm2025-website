@@ -5,7 +5,7 @@ import Material from "~/components/materials/Material";
 const testMaterials: TMaterial[] = [
 	{
 		id: "mat-001",
-		categoryId: "mulch",
+		category: "mulch",
 		name: "Cedar Mulch",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch-cedar2.jpg",
 		description: "Natural cedar mulch with a rich reddish-brown color. Excellent for moisture retention and weed suppression. Pleasant cedar aroma helps repel insects.",
@@ -16,7 +16,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-002",
-		categoryId: "mulch",
+		category: "mulch",
 		name: "Hardwood Mulch",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch_hardwood.jpg",
 		description: "Double-shredded hardwood mulch in a dark brown color. Long-lasting and ideal for garden beds, pathways, and around trees.",
@@ -27,7 +27,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-003",
-		categoryId: "gravel",
+		category: "gravel",
 		name: "Pea Gravel",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-peagravel.jpg",
 		description: "Small, smooth, rounded stones perfect for walkways, driveways, and drainage. Naturally tumbled for a polished appearance.",
@@ -38,7 +38,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-004",
-		categoryId: "gravel",
+		category: "gravel",
 		name: "Crushed Stone #57",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-1insmooth.jpg",
 		description: "Angular crushed stone ideal for driveways and as a base material. Excellent compaction and drainage properties.",
@@ -49,7 +49,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-005",
-		categoryId: "stone",
+		category: "stone",
 		name: "Pennsylvania Bluestone Flagstone",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flagstone-silvermist.jpg",
 		description: "Natural cleft flagstone with blue-gray tones. Perfect for patios, walkways, and stepping stones. Each piece is unique.",
@@ -60,7 +60,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-006",
-		categoryId: "stone",
+		category: "stone",
 		name: "River Rock",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/creekrock_smallround.jpg",
 		description: "Smooth, water-tumbled stones in mixed earth tones. Ideal for landscaping accents, dry creek beds, and around water features.",
@@ -71,7 +71,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-007",
-		categoryId: "soil",
+		category: "soil",
 		name: "Unfiltered Topsoil",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/soil-topsoil.jpg",
 		description: "Screened, nutrient-rich topsoil perfect for lawns, gardens, and raised beds. Free of debris and ready to use.",
@@ -82,7 +82,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-008",
-		categoryId: "soil",
+		category: "soil",
 		name: "Organic Compost",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/premium-compost_480.jpg",
 		description: "Fully composted organic matter that enriches soil with nutrients. Improves soil structure and water retention.",
@@ -93,7 +93,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-009",
-		categoryId: "sand",
+		category: "sand",
 		name: "Mason Sand",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/sand_mason_480.jpg",
 		description: "Fine, clean sand ideal for mixing concrete, laying pavers, and filling joints. Screened for consistency.",
@@ -104,7 +104,7 @@ const testMaterials: TMaterial[] = [
 	},
 	{
 		id: "mat-011",
-		categoryId: "stone",
+		category: "stone",
 		name: "Chopped Stone",
 		imageUrl: "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_chestnut.jpg",
 		description: "Fractured natural stone pieces with irregular shapes. Great for retaining walls, borders, and rustic landscaping features.",
