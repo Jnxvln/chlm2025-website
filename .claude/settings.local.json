@@ -6,7 +6,8 @@
       "Bash(npx prisma:*)",
       "Bash(pnpm run dev)",
       "Bash(rm:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
