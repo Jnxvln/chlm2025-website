@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 html {
-	background-image: url("/images/chlm2025_background_img.png");
+	background-image: url("/images/chlm2025_background_img.webp");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

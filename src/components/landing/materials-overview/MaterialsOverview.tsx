@@ -47,7 +47,7 @@ export default component$(() => {
 
 		/* SOIL */
 		.grid-container > a > .soil {
-			background-image: url("/images/img_soil.png");
+			background-image: url("/images/img_soil.webp");
 			background-size: cover;
 			background-repeat: no-repeat;
 			width: 100%;
@@ -56,7 +56,7 @@ export default component$(() => {
 
 		/* GRAVEL */
 		.grid-container > a > .gravel {
-			background-image: url("/images/img_gravel.png");
+			background-image: url("/images/img_gravel.webp");
 			background-size: cover;
 			background-repeat: no-repeat;
 			width: 100%;
@@ -65,7 +65,7 @@ export default component$(() => {
 
 		/* STONE */
 		.grid-container > a > .stone {
-			background-image: url("/images/img_stone.png");
+			background-image: url("/images/img_stone.webp");
 			background-size: cover;
 			background-repeat: no-repeat;
 			width: 100%;
@@ -74,7 +74,7 @@ export default component$(() => {
 
 		/* MULCH */
 		.grid-container > a > .mulch {
-			background-image: url("/images/img_mulch.png");
+			background-image: url("/images/img_mulch.webp");
 			background-size: cover;
 			background-repeat: no-repeat;
 			width: 100%;

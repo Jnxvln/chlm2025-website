@@ -157,7 +157,7 @@ export const HelpCenter = component$(() => {
             <div class="material-type-bulk">
               <div class="bulk-image-wrapper">
                 <img 
-                  src="/images/help/bulk-pile.png" 
+                  src="/images/help/bulk-pile.webp" 
                   alt="Bulk Pile" 
                   class="bulk-image"
                   width={300}
@@ -195,7 +195,7 @@ export const HelpCenter = component$(() => {
             <div class="material-type-pallets">
               <div class="pallet-image-wrapper">
                 <img 
-                  src="/images/help/pallet-stone.png" 
+                  src="/images/help/pallet-stone.webp" 
                   alt="Pallet Stone" 
                   class="pallet-image"
                   width={300}
@@ -216,7 +216,7 @@ export const HelpCenter = component$(() => {
               <p class="loading-label">We load with</p>
               <div class="equipment-image-wrapper">
                 <img 
-                  src="/images/help/forklift.png" 
+                  src="/images/help/forklift.webp" 
                   alt="Forklift - Used for loading palletized materials" 
                   class="equipment-image"
                   width={250}

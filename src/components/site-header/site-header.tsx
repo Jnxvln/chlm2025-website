@@ -11,7 +11,7 @@ export default component$(() => {
 			{/* Background Image with Overlay */}
 			<div
 				class="absolute inset-0 bg-cover bg-center"
-				style="background-image: url('/images/header_landscape.png');"
+				style="background-image: url('/images/chlm2025_background_img.webp');"
 			>
 				<div class="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-800/60 to-slate-900/80"></div>
 			</div>
