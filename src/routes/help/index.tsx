@@ -50,11 +50,6 @@ export const HelpCenter = component$(() => {
     );
   });
 
-  // Scroll to top handler
-  const scrollToTop = $(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
   // Track scroll position
   useVisibleTask$(({ cleanup }) => {
     const handleScroll = () => {
@@ -498,9 +493,7 @@ export const HelpCenter = component$(() => {
             
             <p class="loading-warning">
               <strong>
-                <u>We are not responsible for any material lost while driving.</u> You also 
-                put others at risk on the road when you have gravel or other material flying 
-                off the trailer. Please tarp your load or put sides on your trailer before loading.
+                We cannot be responsible for material lost during transport. To promote safety for all drivers on the road, please secure your load by using a tarp or trailer sides before leaving.
               </strong>
             </p>
           </div>

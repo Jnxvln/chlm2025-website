@@ -77,12 +77,12 @@ export default component$(() => {
 	])
 	const selectedCarport = useSignal(carports.value?.[0])
 
-	useTask$(({ track }) => {
-		const currentCarport: Carport = track(() => selectedCarport.value)
-		if (currentCarport) {
-			console.log("Selected Carport:", currentCarport.name)
-		}
-	})
+	// useTask$(({ track }) => {
+	// 	const currentCarport: Carport = track(() => selectedCarport.value)
+	// 	if (currentCarport) {
+	// 		console.log("Selected Carport:", currentCarport.name)
+	// 	}
+	// })
 
 	return (
 		<section class="p-2 sm:p-4 bg-white">

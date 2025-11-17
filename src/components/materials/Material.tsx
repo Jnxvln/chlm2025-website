@@ -1,6 +1,6 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import type { PropFunction } from "@builder.io/qwik";
 import { toTitleCase } from "~/utils/utils";
-
 export type TMaterial = {
 	id: string;
 	category: string;
@@ -11,25 +11,42 @@ export type TMaterial = {
 	size?: string;
 	bin?: string;
 	keywords?: string[];
+	onKeywordClick?: PropFunction<(keyword: string) => void>;
 }
 
-export default component$(({ id, category, name, imageUrl, description, size, bin, keywords, isActive }: TMaterial) => {
+
+export default component$(({ category, name, imageUrl, description, size, bin, keywords, onKeywordClick }: TMaterial) => {
 	const isModalOpen = useSignal(false);
+
+	// Prevent body scroll when modal is open
+	useVisibleTask$(({ track }) => {
+		const modalOpen = track(() => isModalOpen.value);
+		
+		if (modalOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+
+		return () => {
+			document.body.style.overflow = 'unset';
+		};
+	});
 
 	return (
 		<>
-			<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-full">
+			<div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-full box-border w-full">
 				{/* Image Section */}
-				<div class="sm:w-2/5 h-48 sm:h-auto bg-gray-200 shrink-0 cursor-pointer hover:opacity-90 transition-opacity" onClick$={() => isModalOpen.value = true}>
+				<div class="w-full sm:w-2/5 h-48 sm:h-auto bg-gray-200 flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity" onClick$={() => isModalOpen.value = true}>
 					<img
 						src={imageUrl}
 						alt={name}
-						class="w-full h-full object-cover"
+						class="w-full h-full object-cover max-w-full"
 					/>
 				</div>
 
 			{/* Content Section */}
-			<div class="flex flex-col p-4 sm:p-6 flex-1">
+			<div class="flex flex-col p-4 sm:p-6 flex-1 min-w-0">
 				{/* Header */}
 				<div class="mb-3">
 					<h3 class="text-xl font-bold text-gray-900 mb-1">{name}</h3>
@@ -58,7 +75,7 @@ export default component$(({ id, category, name, imageUrl, description, size, bi
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 									</svg>
-									Bin: {bin}
+									<span class="font-bold bg-yellow-200 p-1 rounded-lg">Bin: {bin}</span>
 								</span>
 							)}
 						</div>
@@ -76,12 +93,17 @@ export default component$(({ id, category, name, imageUrl, description, size, bi
 				{keywords && keywords.length > 0 && (
 					<div class="flex flex-wrap gap-2 mt-auto">
 						{keywords.map((keyword) => (
-							<span
+							<button
 								key={keyword}
-								class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium"
+								class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium hover:bg-blue-200 hover:shadow-md transition-all duration-200 cursor-pointer"
+								onClick$={() => {
+									window.scrollTo(0, 0);
+									onKeywordClick?.(keyword);
+								}}
+								title={`Filter by ${keyword}`}
 							>
 								{keyword}
-							</span>
+							</button>
 						))}
 					</div>
 				)}
@@ -91,7 +113,7 @@ export default component$(({ id, category, name, imageUrl, description, size, bi
 		{/* Image Modal */}
 		{isModalOpen.value && (
 			<div
-				class="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
+				class="fixed inset-0 z-[1001] bg-black bg-opacity-90 flex items-center justify-center p-4"
 				onClick$={() => isModalOpen.value = false}
 			>
 				{/* Close button */}

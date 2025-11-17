@@ -1,4 +1,4 @@
-import { component$, useSignal, useComputed$, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useSignal, useComputed$, useVisibleTask$, $ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import type { TMaterial } from "~/components/materials/Material";
 import Material from "~/components/materials/Material";
@@ -6,6 +6,9 @@ import CategoryDropdown from "~/components/materials/CategoryDropdown";
 import KeywordSearch from "~/components/materials/KeywordSearch";
 import materialsData from "~/data/materials.json";
 import { toTitleCase } from "~/utils/utils";
+
+const CATEGORY_ALL = "all";
+const DEFAULT_CATEGORY = CATEGORY_ALL;
 
 export default component$(() => {
 	const location = useLocation();
@@ -20,8 +23,13 @@ export default component$(() => {
 	).sort();
 
 	// Signals for filtering
-	const selectedCategory = useSignal<string>("gravel");
+	const selectedCategory = useSignal<string>(DEFAULT_CATEGORY);
 	const searchTerm = useSignal<string>("");
+
+	// Handler for keyword clicks
+	const handleKeywordClick$ = $((keyword: string) => {
+		searchTerm.value = keyword;
+	});
 
 	// Set initial category from URL and handle URL changes
 	useVisibleTask$(({ track }) => {
@@ -33,7 +41,7 @@ export default component$(() => {
 			selectedCategory.value = urlCategory;
 		} else if (!urlCategory) {
 			// Only default to gravel if no URL parameter is present
-			selectedCategory.value = "gravel";
+			selectedCategory.value = DEFAULT_CATEGORY;
 		}
 
 		// Track URL changes
@@ -44,8 +52,13 @@ export default component$(() => {
 	const filteredMaterials = useComputed$(() => {
 		let filtered = allMaterials;
 
-		// Filter by category (skip if "all" is selected)
-		if (selectedCategory.value !== "all") {
+		// If search term is active, automatically switch to "All Material" view
+		if (searchTerm.value.trim() && selectedCategory.value !== CATEGORY_ALL) {
+			selectedCategory.value = CATEGORY_ALL;
+		}
+
+		// Filter by category (skip if CATEGORY_ALL is selected)
+		if (selectedCategory.value !== CATEGORY_ALL) {
 			filtered = filtered.filter(m => m.category === selectedCategory.value);
 		}
 
@@ -53,11 +66,11 @@ export default component$(() => {
 		if (searchTerm.value.trim()) {
 			const search = searchTerm.value.toLowerCase().trim();
 			filtered = filtered.filter(m => {
-				// Check if any keyword matches
+				// Check if any keyword matches (exact match)
 				const keywordMatch = m.keywords?.some(k =>
-					k.toLowerCase().includes(search)
+					k.toLowerCase() === search
 				);
-				// Check if name matches
+				// Check if name matches (partial match still allowed for names)
 				const nameMatch = m.name.toLowerCase().includes(search);
 				return keywordMatch || nameMatch;
 			});
@@ -68,7 +81,7 @@ export default component$(() => {
 
 	// Group materials by category for "All Materials" view
 	const groupedMaterials = useComputed$(() => {
-		if (selectedCategory.value !== "all") {
+		if (selectedCategory.value !== CATEGORY_ALL) {
 			return null; // Not needed for single category view
 		}
 
@@ -94,14 +107,20 @@ export default component$(() => {
 
 				{/* Filter Controls */}
 				<div class="bg-white rounded-lg shadow-md p-6 mb-8">
-					<CategoryDropdown
-						categories={categories}
-						selectedCategory={selectedCategory}
-					/>
-					<KeywordSearch
-						allKeywords={allKeywords}
-						searchTerm={searchTerm}
-					/>
+					<div class="flex flex-col md:flex-row md:gap-6">
+						<div class="flex-1 mb-4 md:mb-0">
+							<CategoryDropdown
+								categories={categories}
+								selectedCategory={selectedCategory}
+							/>
+						</div>
+						<div class="flex-1">
+							<KeywordSearch
+								allKeywords={allKeywords}
+								searchTerm={searchTerm}
+							/>
+						</div>
+					</div>
 				</div>
 
 				{/* Results */}
@@ -110,7 +129,7 @@ export default component$(() => {
 				</div>
 
 				{/* Grouped view for "All Materials" */}
-				{selectedCategory.value === "all" && groupedMaterials.value && (
+				{selectedCategory.value === CATEGORY_ALL && groupedMaterials.value && (
 					<>
 						{groupedMaterials.value.map((group) => (
 							<div key={group.category} class="mb-10">
@@ -121,7 +140,7 @@ export default component$(() => {
 								{/* Materials Grid */}
 								<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 									{group.materials.map((material) => (
-										<Material key={material.id} {...material} />
+										<Material key={material.id} {...material} onKeywordClick={handleKeywordClick$} />
 									))}
 								</div>
 							</div>
@@ -130,10 +149,10 @@ export default component$(() => {
 				)}
 
 				{/* Single category view */}
-				{selectedCategory.value !== "all" && (
+				{selectedCategory.value !== CATEGORY_ALL && (
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 						{filteredMaterials.value.map((material) => (
-							<Material key={material.id} {...material} />
+							<Material key={material.id} {...material} onKeywordClick={handleKeywordClick$} />
 						))}
 					</div>
 				)}

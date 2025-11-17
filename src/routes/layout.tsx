@@ -27,10 +27,10 @@ export default component$(() => {
 	});
 
 	return (
-		<div class="max-w-6xl mx-auto px-2 sm:px-4">
-			<SiteHeader />
-			<Navbar />
-			<div>
+		<div>
+			<div class="sm:max-w-full md:max-w-6xl mx-auto">
+				<SiteHeader />
+				<Navbar />
 				<Slot />
 			</div>
 			<footer class="bg-[#1a1f24] text-white text-center p-4">

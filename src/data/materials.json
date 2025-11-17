@@ -1,112 +1,603 @@
 [
+  {
+    "id": "mat-001",
+    "category": "compost",
+    "name": "Premium Organic Compost",
+    "imageUrl": "/images/materials/Compost.jpeg",
+    "description": "Our Premium Organic Compost is a nutrient-rich blend of chicken litter and hardwood sawdust chips, aged and processed to perfection. Ideal for vegetable gardens, flower beds, and lawn enrichment, it enhances soil structure and promotes healthy, sustainable plant growth.",
+    "size": "",
+    "bin": "",
+    "keywords": ["compost", "organic", "premium", "natural", "garden", "soil", "nutrients", "fertilizer", "wood", "chicken litter"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-002",
+    "category": "creek rock",
+    "name": "Small Round Creek",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/creekrock_smallround.jpg",
+    "description": "Naturally rounded and smooth from years of water shaping, Round Creek Rock adds a timeless, organic look to any landscape. Perfect for decorative beds, drainage areas, and garden borders.",
+    "size": "",
+    "bin": "",
+    "keywords": ["rock", "creek", "round", "decorative", "drainage", "landscape", "stone", "garden"],
+    "isActive": true
+  },
+    {
+    "id": "mat-003",
+    "category": "creek rock",
+    "name": "Medium Round Creek",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/creekrock-mediumround.jpg",
+    "description": "Naturally rounded and smooth from years of water shaping, Round Creek Rock adds a timeless, organic look to any landscape. Perfect for decorative beds, drainage areas, and garden borders.",
+    "size": "",
+    "bin": "",
+    "keywords": ["rock", "creek", "round", "decorative", "drainage", "landscape", "stone", "garden"],
+    "isActive": true
+  },
+  {
+    "id": "mat-004",
+    "category": "creek rock",
+    "name": "Small Flat Creek",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/creekrock_smallflat.jpg",
+    "description": "Flat Creek Rock features naturally flattened shapes ideal for creating rustic walkways, borders, or decorative dry creek beds. Its soft, earthy colors blend beautifully with any outdoor design.",
+    "size": "",
+    "bin": "",
+    "keywords": ["rock", "flat", "creek", "stone", "walkway", "border", "landscape", "natural"],
+    "isActive": true
+  },
 	{
-		"id": "mat-001",
-		"category": "mulch",
-		"name": "Cedar Mulch",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch-cedar2.jpg",
-		"description": "Natural cedar mulch with a rich reddish-brown color. Excellent for moisture retention and weed suppression. Pleasant cedar aroma helps repel insects.",
-		"size": "Bulk or bags",
-		"bin": "A-12",
-		"keywords": ["mulch", "cedar", "organic", "aromatic"],
-		"isActive": true
-	},
-	{
-		"id": "mat-002",
-		"category": "mulch",
-		"name": "Hardwood Mulch",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch_hardwood.jpg",
-		"description": "Double-shredded hardwood mulch in a dark brown color. Long-lasting and ideal for garden beds, pathways, and around trees.",
-		"size": "Bulk or bags",
-		"bin": "A-13",
-		"keywords": ["mulch", "hardwood", "organic", "dark"],
-		"isActive": true
-	},
-	{
-		"id": "mat-003",
-		"category": "gravel",
-		"name": "Pea Gravel",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-peagravel.jpg",
-		"description": "Small, smooth, rounded stones perfect for walkways, driveways, and drainage. Naturally tumbled for a polished appearance.",
-		"size": "3/8 inch",
-		"bin": "B-5",
-		"keywords": ["gravel", "small", "smooth", "drainage"],
-		"isActive": true
-	},
-	{
-		"id": "mat-004",
-		"category": "gravel",
-		"name": "Crushed Stone #57",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-1insmooth.jpg",
-		"description": "Angular crushed stone ideal for driveways and as a base material. Excellent compaction and drainage properties.",
-		"size": "3/4 inch",
-		"bin": "B-7",
-		"keywords": ["gravel", "crushed", "driveway", "base"],
-		"isActive": true
-	},
-	{
-		"id": "mat-005",
-		"category": "stone",
-		"name": "Pennsylvania Bluestone Flagstone",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flagstone-silvermist.jpg",
-		"description": "Natural cleft flagstone with blue-gray tones. Perfect for patios, walkways, and stepping stones. Each piece is unique.",
-		"size": "1-2 inch thick",
-		"bin": "C-2",
-		"keywords": ["flagstone", "patio", "natural", "bluestone"],
-		"isActive": true
-	},
-	{
-		"id": "mat-006",
-		"category": "stone",
-		"name": "River Rock",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/creekrock_smallround.jpg",
-		"description": "Smooth, water-tumbled stones in mixed earth tones. Ideal for landscaping accents, dry creek beds, and around water features.",
-		"size": "2-4 inch",
-		"bin": "C-8",
-		"keywords": ["stone", "river rock", "decorative", "smooth"],
-		"isActive": true
-	},
-	{
-		"id": "mat-007",
-		"category": "soil",
-		"name": "Unfiltered Topsoil",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/soil-topsoil.jpg",
-		"description": "Screened, nutrient-rich topsoil perfect for lawns, gardens, and raised beds. Free of debris and ready to use.",
-		"size": "Bulk",
-		"bin": "D-1",
-		"keywords": ["soil", "topsoil", "garden", "lawn"],
-		"isActive": true
-	},
-	{
-		"id": "mat-008",
-		"category": "soil",
-		"name": "Organic Compost",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/premium-compost_480.jpg",
-		"description": "Fully composted organic matter that enriches soil with nutrients. Improves soil structure and water retention.",
-		"size": "Bulk or bags",
-		"bin": "D-3",
-		"keywords": ["compost", "organic", "soil amendment", "fertilizer"],
-		"isActive": true
-	},
-	{
-		"id": "mat-009",
-		"category": "sand",
-		"name": "Mason Sand",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/sand_mason_480.jpg",
-		"description": "Fine, clean sand ideal for mixing concrete, laying pavers, and filling joints. Screened for consistency.",
-		"size": "Bulk",
-		"bin": "E-2",
-		"keywords": ["sand", "mason", "concrete", "pavers"],
-		"isActive": true
-	},
-	{
-		"id": "mat-011",
-		"category": "stone",
-		"name": "Chopped Stone",
-		"imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_chestnut.jpg",
-		"description": "Fractured natural stone pieces with irregular shapes. Great for retaining walls, borders, and rustic landscaping features.",
-		"size": "4-8 inch",
-		"bin": "C-5",
-		"keywords": ["stone", "chopped", "retaining wall", "natural"],
-		"isActive": true
-	}
+    "id": "mat-005",
+    "category": "creek rock",
+    "name": "Medium Flat Creek",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/creekrock_medflatcreek.jpg",
+    "description": "Flat Creek Rock features naturally flattened shapes ideal for creating rustic walkways, borders, or decorative dry creek beds. Its soft, earthy colors blend beautifully with any outdoor design.",
+    "size": "",
+    "bin": "",
+    "keywords": ["rock", "flat", "creek", "stone", "walkway", "border", "landscape", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-006",
+    "category": "creek rock",
+    "name": "Creek Brick",
+    "imageUrl": "/images/materials/CreekBrick.jpeg",
+    "description": "Creek Brick stones have a unique, brick-like shape while retaining their natural creek texture and tone. They’re excellent for accenting pathways, edging flower beds, or adding character to water features.",
+    "size": "",
+    "bin": "",
+    "keywords": ["creek", "brick", "stone", "landscape", "pathway", "edging", "decorative"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-007",
+    "category": "boulders",
+    "name": "Small Mossy Boulders",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/boulders-1to2man.jpg",
+    "description": "Each boulder is a unique piece of nature, perfect for statement landscaping, retaining walls, or natural seating. Available in a variety of sizes, our creek boulders add bold, organic beauty to any outdoor space.",
+    "size": "",
+    "bin": "",
+    "keywords": ["boulders", "rock", "stone", "large", "decorative", "landscape", "natural"],
+    "isActive": true
+  },
+    {
+    "id": "mat-008",
+    "category": "boulders",
+    "name": "Medium Mossy Boulders",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/boulders_medium.jpg",
+    "description": "Each boulder is a unique piece of nature, perfect for statement landscaping, retaining walls, or natural seating. Available in a variety of sizes, our creek boulders add bold, organic beauty to any outdoor space.",
+    "size": "",
+    "bin": "",
+    "keywords": ["boulders", "rock", "stone", "large", "decorative", "landscape", "natural"],
+    "isActive": true
+  },
+    {
+    "id": "mat-009",
+    "category": "boulders",
+    "name": "Large Mossy Boulders",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/boulders_largemossy.jpg",
+    "description": "Each boulder is a unique piece of nature, perfect for statement landscaping, retaining walls, or natural seating. Available in a variety of sizes, our creek boulders add bold, organic beauty to any outdoor space.",
+    "size": "",
+    "bin": "",
+    "keywords": ["boulders", "rock", "stone", "large", "decorative", "landscape", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-010",
+    "category": "boulders",
+    "name": "Small Creek Boulders",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/boulders_smallcreek.jpg",
+    "description": "Each boulder is a unique piece of nature, perfect for statement landscaping, retaining walls, or natural seating. Available in a variety of sizes, our creek boulders add bold, organic beauty to any outdoor space.",
+    "size": "",
+    "bin": "",
+    "keywords": ["boulders", "rock", "stone", "large", "decorative", "landscape", "natural"],
+    "isActive": true
+  },
+    {
+    "id": "mat-016a",
+    "category": "boulders",
+    "name": "Mossy Basket Boulders",
+    "imageUrl": "/images/materials/BasketBoulders_Mossy.jpeg",
+    "description": "Smaller boulders with natural moss accents that add instant age and charm, includes rounded and angular pieces. Ideal for borders, ponds, and accent pieces in shaded garden settings.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mossy", "round", "boulders", "brown", "pond", "border", "garden", "natural"],
+    "isActive": true
+  },
+    {
+    "id": "mat-016b",
+    "category": "boulders",
+    "name": "Creek Basket Boulders",
+    "imageUrl": "/images/materials/BasketBoulders_Creek.jpeg",
+    "description": "Smaller smooth boulders, includes rounded and angular pieces. Ideal for borders, ponds, and accent pieces in shaded garden settings.",
+    "size": "",
+    "bin": "",
+    "keywords": ["smooth", "round", "boulders", "brown", "pond", "border", "garden", "natural"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-011",
+    "category": "field stone",
+    "name": "Mossy Natural Steps",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/fieldstone_mossynaturalsteps.jpg",
+    "description": "These moss-covered natural stone steps bring a serene, old-world feel to gardens and pathways. Each piece is naturally weathered and unique, perfect for grottoes or woodland landscapes.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mossy", "steps", "natural", "stone", "garden", "pathway", "landscape", "grotto"],
+    "isActive": true
+  },
+  {
+    "id": "mat-012",
+    "category": "field stone",
+    "name": "Medium Cut Steps",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/fieldstone_medcutstonesteps.jpg",
+    "description": "Cut Stone Steps offer a clean, sturdy solution for garden paths, terraces, and elevation changes. Their flat, even surfaces make them both functional and visually striking.",
+    "size": "",
+    "bin": "",
+    "keywords": ["stone", "steps", "cut", "path", "terrace", "landscape", "stair"],
+    "isActive": true
+  },
+{
+    "id": "mat-013",
+    "category": "field stone",
+    "name": "Large Cut Steps",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/fieldstone_largecutsteps.jpg",
+    "description": "Cut Stone Steps offer a clean, sturdy solution for garden paths, terraces, and elevation changes. Their flat, even surfaces make them both functional and visually striking.",
+    "size": "",
+    "bin": "",
+    "keywords": ["stone", "steps", "cut", "path", "terrace", "landscape", "stair"],
+    "isActive": true
+  },
+  {
+    "id": "mat-014",
+    "category": "field stone",
+    "name": "Mossy Brick",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/fieldstone_mossybrick.jpg",
+    "description": "Mossy Brick stones have a natural, rectangular form with a charming weathered look. They’re perfect for rustic garden walls, edging, or accent features with a touch of natural character.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mossy", "brick", "fieldstone", "brown", "wall", "edging", "garden", "rustic"],
+    "isActive": true
+  },
+  {
+    "id": "mat-015",
+    "category": "field stone",
+    "name": "Mossy Waterfall",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/fieldstone_mossywaterfall.jpg",
+    "description": "This moss-touched field stone is a favorite for creating realistic, tranquil waterfall features. Each piece’s natural texture and shape help mimic the look and sound of a real streambed.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mossy", "waterfall", "stone", "brown", "fieldstone", "water feature", "garden"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-017",
+    "category": "mulch",
+    "name": "Cedar Mulch",
+    "imageUrl": "https://www.foxlandscapesupply.com/wp-content/uploads/aromatic-cedar-mulch-3.jpg",
+    "description": "Cedar Mulch offers a clean, aromatic, and naturally pest-resistant option for flower beds and walkways. Its long-lasting fibers resist decay while keeping soil cool and moist.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mulch", "cedar", "aromatic", "blonde", "pink", "natural", "wood", "garden", "pest resistant", "flower bed", "moisture"],
+    "isActive": true
+  },
+  {
+    "id": "mat-018",
+    "category": "mulch",
+    "name": "Double-ground Hardwood Mulch",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch_hardwood.jpg",
+    "description": "Our Double-Ground Hardwood Mulch provides rich, dark color and fine texture for a polished landscape finish. It breaks down slowly, enriching the soil over time while retaining moisture.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mulch", "hardwood", "natural", "wood", "double-ground", "garden", "moisture", "brown", "flower bed"],
+    "isActive": true
+  },
+  {
+    "id": "mat-019",
+    "category": "mulch",
+    "name": "IPEMA-Certified Playground Mulch",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch_playground.jpg",
+    "description": "Safety-tested and certified by IPEMA, this mulch provides a soft, cushioned surface ideal for playgrounds and recreational areas. It’s made from clean, natural wood and designed for shock absorption.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mulch", "playground", "ipema", "certified", "safety", "natural", "wood", "soft", "garden", "blonde", "flower bed", "moisture"],
+    "isActive": true
+  },
+  {
+    "id": "mat-020",
+    "category": "mulch",
+    "name": "Red Mulch",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch-red.jpg",
+    "description": "These vibrant color-enhanced mulches, made from a durable pinewood and hardwood blend, offer long-lasting curb appeal. Choose from red, chocolate, or black to complement your home’s exterior or garden style.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mulch", "colored", "wood", "red", "pinewood", "hardwood", "wood", "garden", "flower bed", "dyed", "moisture"],
+    "isActive": true
+  },
+    {
+    "id": "mat-021",
+    "category": "mulch",
+    "name": "Chocolate Mulch",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch-chocolate.jpg",
+    "description": "These vibrant color-enhanced mulches, made from a durable pinewood and hardwood blend, offer long-lasting curb appeal. Choose from red, chocolate, or black to complement your home’s exterior or garden style.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mulch", "colored", "chocolate", "pinewood", "hardwood", "wood", "brown", "garden", "flower bed", "moisture"],
+    "isActive": true
+  },
+    {
+    "id": "mat-022",
+    "category": "mulch",
+    "name": "Black Mulch",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/mulch_black.jpg",
+    "description": "These vibrant color-enhanced mulches, made from a durable pinewood and hardwood blend, offer long-lasting curb appeal. Choose from red, chocolate, or black to complement your home’s exterior or garden style.",
+    "size": "",
+    "bin": "",
+    "keywords": ["mulch", "colored", "black", "pinewood", "hardwood", "wood", "garden", "flower bed", "dyed", "moisture"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-023",
+    "category": "chopped stone",
+    "name": "Cherry Blend",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped-cherryblend.jpg",
+    "description": "Cherry Blend features a warm mix of pink, rustic orange, and white tones, ideal for walls, borders, and accents. Its rich color variation adds inviting character to any landscape or architectural design.",
+    "size": "",
+    "bin": "",
+    "keywords": ["stone", "chopped", "cherry", "blend", "pink", "red", "orange", "rustic", "retaining", "wall", "walkway", "pathway", "borders", "colorful", "edging", "4x4", "4x6"],
+    "isActive": true
+  },
+  {
+    "id": "mat-024",
+    "category": "chopped stone",
+    "name": "Cheyenne Blue",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_cheyenneblue.jpg",
+    "description": "Cheyenne Blue showcases subtle gray, brown, and blue hues that bring depth and sophistication to walls and edging. Its natural tone pairs beautifully with both modern and rustic exteriors.",
+    "size": "",
+    "bin": "",
+    "keywords": ["stone", "chopped", "cheyenne", "blue", "gray", "brown", "retaining", "wall", "walkway", "pathway", "borders", "edging", "4x4", "4x6"],
+    "isActive": true
+  },
+  {
+    "id": "mat-025",
+    "category": "chopped stone",
+    "name": "Silvermist",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_silvermistu.jpg",
+    "description": "Silvermist is a stunning silvery-gray stone with cool undertones that can appear slightly blue in certain light. It’s a designer favorite for elegant retaining walls, walkways, and garden features.",
+    "size": "",
+    "bin": "",
+    "keywords": ["stone", "chopped", "silvermist", "gray", "blue", "retaining", "wall", "walkway", "pathway", "borders", "edging", "4x4", "4x6"],
+    "isActive": true
+  },
+  {
+    "id": "mat-026",
+    "category": "chopped stone",
+    "name": "Chestnut",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_chestnut.jpg",
+    "description": "Chestnut offers a blend of warm white, beige, and brown tones that complement natural surroundings. Perfect for edging, borders, and walls where a cozy, earthy look is desired.",
+    "size": "",
+    "bin": "",
+    "keywords": ["stone", "chopped", "chestnut", "brown", "beige", "retaining", "wall", "walkway", "pathway", "borders", "edging", "4x4", "4x6"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-027",
+    "category": "flagstone",
+    "name": "Silvermist",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flagstone-silvermist.jpg",
+    "description": "Silvermist Flagstone features soft gray tones with subtle silver-blue highlights, ideal for patios, walkways, and pool decks. Its refined color palette pairs beautifully with modern or natural designs.",
+    "size": "",
+    "bin": "",
+    "keywords": ["flagstone", "stone", "silvermist", "gray", "blue", "patio", "walkway", "pathway", "pool"],
+    "isActive": true
+  },
+  {
+    "id": "mat-028",
+    "category": "flagstone",
+    "name": "Cherry Blend",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flagstone-cherryblend.jpg",
+    "description": "With its pink, orange, and white undertones, Cherry Blend Flagstone adds warmth and visual interest to any outdoor space. Each piece offers unique color movement and rustic charm.",
+    "size": "",
+    "bin": "",
+    "keywords": ["flagstone", "stone", "cherry", "blend", "pink", "orange", "rustic", "patio", "walkway", "pathway", "garden", "pool"],
+    "isActive": true
+  },
+  {
+    "id": "mat-029",
+    "category": "flagstone",
+    "name": "Cheyenne Blue",
+    "imageUrl": "/images/materials/Flagstone_CheyBlue.jpeg",
+    "description": "Cheyenne Blue Flagstone offers a cool mix of blue-gray and brown hues, creating a balanced, natural look. It’s perfect for stepping stones, garden paths, and patios with a tranquil aesthetic.",
+    "size": "",
+    "bin": "",
+    "keywords": ["flagstone", "stone", "cheyenne", "blue", "brown", "patio", "walkway", "pathway", "garden", "pool"],
+    "isActive": true
+  },
+  {
+    "id": "mat-030",
+    "category": "flagstone",
+    "name": "Buckskin",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/dark_buckskin_3024x3300.jpg",
+    "description": "Buckskin Flagstone ranges from light beige to tan, lending a soft, sunny tone to walkways and patios. Its neutral coloring blends easily with surrounding plants and stone features.",
+    "size": "",
+    "bin": "",
+    "keywords": ["flagstone", "stone", "buckskin", "brown", "tan", "beige", "patio", "walkway", "pathway", "garden", "pool"],
+    "isActive": true
+  },
+  {
+    "id": "mat-031",
+    "category": "flagstone",
+    "name": "Dark Buckskin",
+    "imageUrl": "/images/materials/Flagstone_DarkBuck.jpeg",
+    "description": "This variation of Buckskin brings deeper, chocolate-beige tones for a more dramatic and grounded look. It’s perfect for high-contrast or richly accented landscapes.",
+    "size": "",
+    "bin": "",
+    "keywords": ["flagstone", "stone", "buckskin", "dark", "brown", "chocolate", "patio", "walkway", "pathway", "garden", "pool"],
+    "isActive": true
+  },
+  {
+    "id": "mat-032",
+    "category": "flagstone",
+    "name": "Palomino",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flag_vanilla_latte_3024x3300.jpg",
+    "description": "Palomino Flagstone offers pale beige and light tan hues with a clean, understated elegance. Its softer tone provides a warm, inviting look for patios and pathways.",
+    "size": "",
+    "bin": "",
+    "keywords": ["flagstone", "stone", "palomino", "tan", "brown", "beige", "patio", "walkway", "pathway", "garden", "pool"],
+    "isActive": true
+  },
+
+
+
+
+
+
+  {
+    "id": "mat-033",
+    "category": "soil",
+    "name": "Unscreened Topsoil",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/soil-topsoil.jpg",
+    "description": "Locally dug and naturally sandy with bits of clay and organic matter, our Unscreened Topsoil is a practical, affordable choice for filling and leveling. Expect occasional roots and clay balls typical of natural loam.",
+    "size": "",
+    "bin": "",
+    "keywords": ["soil", "topsoil", "unscreened", "unfiltered", "local", "fill", "leveling", "loam", "clay", "dirt", "brown"],
+    "isActive": true
+  },
+  {
+    "id": "mat-034",
+    "category": "soil",
+    "name": "Craig's Mix",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/craigs_mix_480.jpg",
+    "description": "A balanced blend of Unscreened Topsoil and our Premium Organic Compost, Craig’s Mix is ideal for general gardening and flower beds. It provides nutrients and structure for healthy root growth and moisture retention.",
+    "size": "",
+    "bin": "",
+    "keywords": ["soil", "compost", "topsoil", "mix", "blend", "garden", "brown", "nutrients", "moisture"],
+    "isActive": true
+  },
+  {
+    "id": "mat-035",
+    "category": "soil",
+    "name": "Special Blend",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/special_blend_480.jpg",
+    "description": "Our Special Blend combines 70% Premium Organic Compost with 30% masonry sand for excellent drainage and root development. It’s a customer favorite for lawns and sod, nutrient-rich yet quick-draining for vigorous, green growth.",
+    "size": "",
+    "bin": "",
+    "keywords": ["soil", "special", "blend", "sand", "compost", "lawn", "brown", "sod", "drainage"],
+    "isActive": true
+  },
+  {
+    "id": "mat-036",
+    "category": "soil",
+    "name": "Masonry Sand",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/sand_mason_480.jpg",
+    "description": "Our Masonry Sand is a fine, clean, screened, and consistent sand ideal for bricklaying, mortar mixing, and leveling projects. It compacts smoothly and drains well, making it a versatile choice for patios, pavers, and general construction use.",
+    "size": "",
+    "bin": "",
+    "keywords": ["sand", "masonry", "fine", "screened", "construction", "blonde", "brick", "mortar", "pavers", "leveling", "compaction", "drainage"],
+    "isActive": true
+  },
+  {
+    "id": "mat-037",
+    "category": "soil",
+    "name": "Concrete Sand",
+    "imageUrl": "/images/materials/ConcreteSand.jpeg",
+    "description": "Concrete Sand is a coarse, multi-purpose sand with tiny gravel pieces mixed throughout, providing excellent stability and drainage. It’s ideal for concrete mixes, base layers, leveling, and other construction applications.",
+    "size": "",
+    "bin": "",
+    "keywords": ["sand", "concrete", "coarse", "construction", "blonde", "mortar", "leveling", "industrial", "compaction", "drainage"],
+    "isActive": true
+  },
+
+
+
+
+
+
+
+
+
+{
+  "id": "mat-037a",
+  "category": "gravel",
+  "name": "Blue Chips 5/8\"",
+  "imageUrl": "/images/materials/Gravel_BlueChips.jpeg",
+  "description": "A clean 5/8\" decorative gravel made from the same material as Blue SB2 but without any fines. Ideal for patios, pathways, walkways, and other landscape features needing a crisp, uniform look.",
+  "size": "5/8\"",
+  "bin": "0",
+  "keywords": ["blue", "chips", "decorative", "gravel", "small", "walkway", "patio", "clean", "screened"],
+  "isActive": true
+},
+  {
+    "id": "mat-037b",
+    "category": "gravel",
+    "name": "Smooth Brown 1\"-under",
+    "imageUrl": "/images/materials/Gravel_Bin01.jpeg",
+    "description": "A naturally smooth brown gravel screened to 1\" and smaller. Its warm earth tones and rounded texture make it perfect for driveways, walkways, and decorative beds.",
+    "size": "1\"-under",
+    "bin": "1",
+    "keywords": ["gravel", "smooth", "brown", "small", "decorative", "driveway", "walkway", "pathway", "landscape", "1 inch", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-038",
+    "category": "gravel",
+    "name": "Smooth Brown 1½ - 2\"",
+    "imageUrl": "/images/materials/Gravel_Bin02.jpeg",
+    "description": "A larger, rounded brown gravel ranging from 1½ to 2 inches in size. Excellent for decorative landscapes, drainage, and accent areas where a natural, rustic look is desired.",
+    "size": "1.5\"-2\"",
+    "bin": "2",
+    "keywords": ["gravel", "smooth", "brown", "large", "decorative", "drainage", "2 inch", "landscape", "natural", "fill line", "french drain"],
+    "isActive": true
+  },
+  {
+    "id": "mat-039",
+    "category": "gravel",
+    "name": "Crushed Decomposed Granite",
+    "imageUrl": "/images/materials/Crushed_DG.jpeg",
+    "description": "Crushed Decomposed Granite provides a compactable, natural surface ideal for pathways, patios, and driveways. Its fine texture and earthy color create a clean, polished look with excellent drainage.",
+    "size": "3/16\"-under",
+    "bin": "3",
+    "keywords": ["gravel", "crushed", "decomposed", "granite", "dg", "base", "pathway", "patio", "compactable", "packs", "natural", "drainage"],
+    "isActive": true
+  },
+  {
+    "id": "mat-040",
+    "category": "gravel",
+    "name": "Blue Fine Screenings",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-bluefines.jpg",
+    "description": "Blue Fine Screenings are finely crushed Blue SB2 particles, pulverized to nearly a powder consistency. Ideal for paver bases, compacted walkways, and leveling work where a firm, smooth finish is needed.",
+    "size": "3/8\"-under",
+    "bin": "4",
+    "keywords": ["gravel", "screenings", "blue", "fines", "crushed", "paver base", "leveling", "pathway", "sb2", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-041",
+    "category": "gravel",
+    "name": "Blue & White 2½\"",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/placeholder_6g0cztw.png",
+    "description": "Blue & White 2½\" gravel features a striking mix of light gray, blue, and white stones in larger decorative sizes. Perfect for accent landscaping, drainage areas, and erosion control projects.",
+    "size": "2\" to 2.5\"",
+    "bin": "5",
+    "keywords": ["gravel", "blue", "white", "decorative", "large", "drainage", "erosion control", "landscape", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-042",
+    "category": "gravel",
+    "name": "Landscape Rock",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-landscapecobbles.jpg",
+    "description": "Landscape Rock consists of large, naturally rounded cobbles ranging from 4\" to 12\" and up. Ideal for decorative beds, water features, and statement landscaping pieces.",
+    "size": "4\" to 12\"+",
+    "bin": "6",
+    "keywords": ["rock", "landscape", "cobbles", "boulders", "decorative", "garden", "large", "water feature", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-043",
+    "category": "gravel",
+    "name": "Arkansas Red Base",
+    "imageUrl": "/images/materials/AR_Red_Base.jpeg",
+    "description": "Arkansas Red Base is a crushed red gravel blend approximately 1¼\" and smaller. It compacts tightly and adds warm color to driveways, base layers, and decorative areas.",
+    "size": "1.25\"-under",
+    "bin": "7",
+    "keywords": ["gravel", "arkansas", "red", "base", "crushed", "driveway", "compactable", "packs", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-044",
+    "category": "gravel",
+    "name": "Blue & White 6\"-under",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/placeholder_6g0cztw.png",
+    "description": "A bold mix of blue and white crushed stone ranging up to 6 inches. Excellent for erosion control, drainage swales, or large decorative rock features.",
+    "size": "3\" to 6\"",
+    "bin": "9",
+    "keywords": ["gravel", "blue", "white", "large", "rock", "drainage", "erosion control", "decorative", "natural"],
+    "isActive": true
+  },
+  {
+    "id": "mat-045",
+    "category": "gravel",
+    "name": "Crushed Brown 1½\"",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-crushed1.5in.jpg",
+    "description": "Crushed Brown 1½\" gravel features angular brown stone pieces ideal for driveways, pathways, and decorative borders. Its color and texture provide excellent contrast in modern and rustic designs alike.",
+    "size": "1\" to 1½\"",
+    "bin": "10",
+    "keywords": ["gravel", "brown", "crushed", "driveway", "pathway", "decorative", "landscape", "natural", "drainage", "fill line", "french drain"],
+    "isActive": true
+  },
+  {
+    "id": "mat-046",
+    "category": "gravel",
+    "name": "Pea Gravel",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-peagravel.jpg",
+    "description": "Pea Gravel consists of smooth, naturally rounded stones typically ranging from ⅛″ to ⅜″ in size. Perfect for walkways, playgrounds, driveways, and decorative ground cover.",
+    "size": "⅛ to ⅜",
+    "bin": "11",
+    "keywords": ["gravel", "pea", "rounded", "brown", "beige", "white", "decorative", "walkway", "playground", "small"],
+    "isActive": true
+  },
+  {
+    "id": "mat-047",
+    "category": "gravel",
+    "name": "Blue SB2",
+    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-bluesb2.jpg",
+    "description": "Blue SB2 is a crushed blue-gray limestone blend up to 1¼\" and smaller. Commonly used for driveways, base layers, and compacted surfaces requiring excellent stability and drainage.",
+    "size": "1.25\"-under",
+    "bin": "12",
+    "keywords": ["gravel", "blue", "sb2", "crushed", "base", "driveway", "packs", "compactable"],
+    "isActive": true
+  }
 ]
