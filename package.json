@@ -9,7 +9,8 @@
   "packageManager": "pnpm@10.12.1",
   "type": "module",
   "scripts": {
-    "build": "qwik build",
+    "prisma:generate": "prisma generate",
+    "build": "pnpm run prisma:generate && qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.types": "tsc --incremental --noEmit",
