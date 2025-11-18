@@ -1,6 +1,6 @@
 {
-  "name": "my-qwik-empty-starter",
-  "description": "Blank project with routing included",
+  "name": "chlm2025-website",
+  "description": "The official website for C&H Landscape Materials business.",
   "engines": {
     "node": "20.19.0"
   },
