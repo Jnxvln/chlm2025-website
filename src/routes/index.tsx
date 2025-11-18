@@ -119,7 +119,62 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "C&H offers a wide selection of rock, stone, sand and gravel, topsoil and compost, plus a beautiful collection of colored mulches as well as natural hardwood and cedar mulch.",
+      content:
+        "C&H Landscape Materials in Texarkana, TX offers rock, stone, sand, gravel, topsoil, compost, hardwood mulch, and cedar mulch in a wide variety of colors and sizes.",
+    },
+    { name: "charset", content: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    { name: "robots", content: "index, follow" },
+    {
+      name: "keywords",
+      content:
+        "landscape materials, mulch, gravel, rock, stone, sand, topsoil, compost, Texarkana, C&H Landscape Materials",
+    },
+    { name: "theme-color", content: "#15304D" },
+
+    // Open Graph
+    { property: "og:title", content: "C&H Landscape Materials | Texarkana, TX" },
+    {
+      property: "og:description",
+      content:
+        "Bulk landscape materials for home and commercial projects: rock, stone, sand, gravel, mulch, compost, and more.",
+    },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:url",
+      content: "https://chlm2025-website-production.up.railway.app/",
+    },
+    {
+      property: "og:image",
+      content:
+        "https://chlm2025-website-production.up.railway.app/images/CHLM_OG_Image.jpg",
+    },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:site_name", content: "C&H Landscape Materials" },
+    { property: "og:locale", content: "en_US" },
+
+    // Twitter / X
+    { name: "twitter:card", content: "summary_large_image" },
+    {
+      name: "twitter:title",
+      content: "C&H Landscape Materials | Texarkana, TX",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Bulk landscape materials for home and commercial projects: rock, stone, sand, gravel, mulch, compost, and more.",
+    },
+    {
+      name: "twitter:image",
+      content:
+        "https://chlm2025-website-production.up.railway.app/images/CHLM_OG_Image.jpg",
+    },
+  ],
+  links: [
+    {
+      rel: "canonical",
+      href: "https://chlm2025-website-production.up.railway.app/",
     },
   ],
 };
