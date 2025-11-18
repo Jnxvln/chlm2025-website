@@ -52,13 +52,17 @@ export default defineConfig(({ command, mode }): UserConfig => {
         // Don't cache the server response in dev mode
         "Cache-Control": "public, max-age=0",
       },
-      port: 3000
+      port: 3000,
+      host: true,
+      allowedHosts: true
     },
     preview: {
       headers: {
         // Do cache the server response in preview (non-adapter production build)
         "Cache-Control": "public, max-age=600",
       },
+      host: true,
+      allowedHosts: true,
     },
   };
 });
