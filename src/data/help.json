@@ -3,7 +3,7 @@
     {
       "id": 1,
       "question": "What are your hours of operation?",
-      "answer": "March-October we are open 8am-12pm Mon-Fri and 8am-12pm Saturday. Nov-Feb we're open 8am-5pm Mon-Fri and closed Saturdays. We are closed on major holidays.",
+      "answer": "Spring hours (March-October) we are open 8am-12pm Mon-Fri and 8am-12pm Saturday. Fall hours (Nov-Feb) we're open 8am-12pm Mon-Fri and closed on Saturdays. You can always view our current hours on the Contact page.",
       "categories": ["general"],
       "relatedLinks": [
         { "text": "Contact Us", "url": "/contact" }
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "question": "Do you offer delivery services?",
-      "answer": "We don't directly offer delivery services, but we do have a few recommendations for some local folks with pickup trucks and trailers who can help. Please contact us for more details.",
+      "answer": "We don't directly offer delivery services, but we can recommend some local contractors with pick-up trucks and trailers who can help. Please contact us for more details.",
       "categories": ["delivery"],
       "relatedLinks": [
         { "text": "Contact Us", "url": "/contact" }
@@ -37,13 +37,689 @@
     },
     {
       "id": 5,
-      "question": "Can you load my truck or trailer?",
+      "question": "Can you load my truck or trailer for me?",
       "answer": "Yes, we provide loading services. Please refer to our loading information section below for weight limits and recommendations based on your vehicle type.",
       "categories": ["loading"],
       "relatedLinks": [
         { "text": "Loading Information", "url": "#loading" }
       ]
-    }
+    },
+    {
+      "id": 6,
+      "question": "Where are you located?",
+      "answer": "We are located at the corner of King's Highway and 7th Street (or Hwy 67) in Texarkana, Texas. You can also find a map on our Contact page.",
+      "categories": ["general"],
+      "relatedLinks": [
+        { "text": "Contact", "url": "/contact" }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Do you offer refunds or returns on materials?",
+      "answer": "Due to the nature of bulk products, we are unable to accept returns, all sales are final.",
+      "categories": ["general"],
+      "relatedLinks": []
+    },
+    {
+      "id": 8,
+      "question": "Do you sell to both homeowners and contractors?",
+      "answer": "Yes, we sell to both homeowners and contractors.",
+      "categories": ["general"],
+      "relatedLinks": []
+    },
+    {
+      "id": 9,
+      "question": "Do you have a public restroom available?",
+      "answer": "We do not have a public restroom available on site at this time.",
+      "categories": ["general"],
+      "relatedLinks": [
+        { "text": "", "url": "" }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Are pets allowed on the property?",
+      "answer": "Pets are allowed but not recommended due to active loading equipment on the yard. If you bring a pet, they must be secured and supervised at all times.",
+      "categories": ["general"],
+      "relatedLinks": [
+        { "text": "", "url": "" }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What size trailer do I need?",
+      "answer": "The size of trailer you need depends on the type and amount of material you plan to purchase. For example, a standard 5'x8' utility trailer can typically hold about 1 cubic yard of material, which is roughly equivalent to 1 ton of most bulk materials. However, heavier materials like stone may require a larger or more robust trailer. It's best to consult with us directly to determine the appropriate trailer size for your specific needs.",
+      "categories": ["loading"],
+      "relatedLinks": [
+        { "text": "Loading Information", "url": "#loading" }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "How much weight can my truck safely carry?",
+      "answer": "Different vehicles and trailers have different safe capacities, and we load accordingly. Pickup trucks and trailers are assessed on a case-by-case basis to ensure safe hauling. If we determine that a full yard isn’t appropriate for your setup, we’ll adjust the load for safety. When in doubt, feel free to ask, we’re happy to guide you.",
+      "categories": ["loading"],
+      "relatedLinks": [
+        { "text": "Loading Information", "url": "#loading" }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "How long does it take to be loaded?",
+      "answer": "Loading times can vary based on the type and amount of material, as well as how busy we are at the time. On average, loading a standard pickup truck or trailer takes about 5-10 minutes from the time of purchase. For larger loads or during peak times, it may take longer. We appreciate your patience and will do our best to load you as quickly and safely as possible.",
+      "categories": ["loading"],
+      "relatedLinks": []
+    },
+    {
+      "id": 13,
+      "question": "Do you provide tie-downs or tarps?",
+      "answer": "At this time we do not provide tie-downs or tarps. We recommend bringing your own to ensure your load is secure and protected during transport.",
+      "categories": ["loading"],
+      "relatedLinks": []
+    },
+    {
+      "id": 14,
+      "question": "How much area does one cubic yard cover?",
+      "answer": "Many factors affect coverage including material type, depth, and compaction. As a general guideline, one cubic yard typically covers about 160 square feet at a depth of 2 inches. However, for more accurate estimates based on specific materials and project requirements, please refer to our coverage charts below, use our online calculator as an estimate, or contact us for assistance.",
+      "categories": ["coverage"],
+      "relatedLinks": [
+        { "text": "Coverage Charts", "url": "#coverage" },
+        { "text": "Material Calculator", "url": "/calculator" },
+        { "text": "Contact Us", "url": "/contact" }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What's the difference between a cubic yard and a ton?",
+      "answer": "A cubic yard is a measure of volume, while a ton is a measure of weight. The weight of a cubic yard can vary significantly depending on the type of material. For example, a cubic yard of mulch weighs much less than a cubic yard of stone. To determine how many tons you need for your project, it's important to know the specific material and its density. Please refer to our coverage charts or contact us for more detailed information.",
+      "categories": ["coverage"],
+      "relatedLinks": [
+        { "text": "Coverage Charts", "url": "#coverage" },
+        { "text": "Contact Us", "url": "/contact" }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "How many wheelbarrow loads are in a yard?",
+      "answer": "On average, a standard wheelbarrow holds about 3 cubic feet of material. Since there are 27 cubic feet in a cubic yard, you can expect to get approximately 9 wheelbarrow loads from one cubic yard of material. However, this can vary based on the size of your wheelbarrow and how full you load it. For more precise calculations based on your specific needs, feel free to contact us.",
+      "categories": ["coverage"],
+      "relatedLinks": [
+        { "text": "Coverage Charts", "url": "#coverage" },
+        { "text": "Contact Us", "url": "/contact" }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "How do I estimate material for a driveway?",
+      "answer": "To estimate the amount of material needed for a driveway, you'll need to calculate the area and desired depth. First, measure the length and width of the driveway to find the area in square feet (Length x Width). Next, determine the depth you want in inches. Convert this depth to feet by dividing by 12. Then, multiply the area by the depth in feet to get the volume in cubic feet. Finally, divide the total cubic feet by 27 to convert to cubic yards. For example, a 200 sqft driveway at 4 inches deep would require approximately 2.96 cubic yards of material. For specific material recommendations and more detailed estimates, please contact us.",
+      "categories": ["coverage"],
+      "relatedLinks": [
+        { "text": "Coverage Charts", "url": "#coverage" },
+        { "text": "Contact Us", "url": "/contact" }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "How do I estimate soil for raised beds?",
+      "answer": "To estimate the amount of soil needed for raised beds, start by measuring the length, width, and height of each bed in feet. Calculate the volume by multiplying these three dimensions together (Length x Width x Height) to get cubic feet. Then, convert cubic feet to cubic yards by dividing by 27. For example, a raised bed that is 4 feet long, 2 feet wide, and 1 foot high would require approximately 0.30 cubic yards of soil. For more accurate estimates based on your specific project and soil type, please contact us.",
+      "categories": ["coverage"],
+      "relatedLinks": [
+        { "text": "Coverage Charts", "url": "#coverage" },
+        { "text": "Contact Us", "url": "/contact" }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "How do I convert square feet to cubic yards?",
+      "answer": "To convert square feet to cubic yards, you need to know the depth of the material in feet. First, multiply the area in square feet by the depth in feet to get the volume in cubic feet. Then, divide the total cubic feet by 27 to convert to cubic yards. For example, if you have an area of 100 square feet and a depth of 0.5 feet (6 inches), the calculation would be: 100 sqft x 0.5 ft = 50 cubic feet. Then, 50 cubic feet ÷ 27 = approximately 1.85 cubic yards. For more precise calculations based on your specific needs, feel free to contact us.",
+      "categories": ["coverage"],
+      "relatedLinks": [
+        { "text": "Coverage Charts", "url": "#coverage" },
+        { "text": "Contact Us", "url": "/contact" }
+      ]
+    },
+    {
+    "id": 20,
+    "question": "What’s the difference between hardwood mulch and cedar mulch?",
+    "answer": "Hardwood mulch is a great all-purpose option and breaks down into the soil over time. Cedar mulch has a lighter color, a pleasant aroma, and is naturally more resistant to insects and decay.",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Does mulch attract bugs?",
+    "answer": "Mulch can attract some insects, but this is normal and generally not harmful. Choosing cedar mulch helps reduce insect activity because of its natural oils.",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Is mulch safe for pets?",
+    "answer": "Most mulches are pet-safe. As with any outdoor material, it’s best to supervise pets and prevent chewing or ingestion.",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "How long does mulch last?",
+    "answer": "Mulch typically lasts one to two seasons depending on sun exposure, weather, and moisture. Refreshing the top layer once a year keeps it looking clean and vibrant.",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Which mulch holds color the longest?",
+    "answer": "Dyed mulches generally hold color longer than natural mulches. Black and brown dyed options tend to fade the slowest, Cedar tends to fade the fastest (often to a silvery-gray color).",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Do you sell colored dyed mulch (black, brown, red)?",
+    "answer": "Yes, we offer a selection of dyed mulches in black, brown, and red depending on availability",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "Is cedar mulch good for pest control?",
+    "answer": "Cedar mulch naturally helps deter certain insects due to its aromatic oils, making it a popular choice for pest-sensitive areas.",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Will mulch wash away in heavy rain?",
+    "answer": "Mulch can shift on slopes or in areas with heavy water flow. Edging and proper drainage help keep mulch in place.",
+    "categories": ["mulch"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+
+
+  {
+    "id": 28,
+    "question": "What’s the best gravel for driveways?",
+    "answer": "Blue SB2 and our Arkansas Red Base are compacting materials that provide a solid, stable base. Some customers may also choose to top off with washed gravel such as our 1\" Smooth (Bin #1) or similar for a clean finish.",
+    "categories": ["gravel"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "What’s the difference between 57 Stone and Crusher Run?",
+    "answer": "57 Stone is a clean, uniform rock used for drainage and decorative applications. Crusher Run (also called \"crush and run\" contains stone dust and compacts tightly for driveways and foundations. While we don't care Crusher Run we do offer Blue SB2 or our Arkansas Red Base which serves a similar purpose.",
+    "categories": ["gravel"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Do you sell pea gravel?",
+    "answer": "Yes, we offer pea gravel for walkways, playgrounds, dog runs, and decorative landscaping.",
+    "categories": ["gravel"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 31,
+    "question": "How much gravel do I need for a parking pad?",
+    "answer": "The amount depends on the size of the pad and your desired depth. Our coverage chart and calculator can help you estimate accurately. Generally speaking, for a standard 10'x20' parking pad at a depth of 4 inches, you would need approximately 2.5 cubic yards of gravel.",
+    "categories": ["gravel"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 32,
+    "question": "What size gravel should I use for drainage?",
+    "answer": "Clean, uniform gravel such as 57 Stone (our Bin #1, 1\" Smooth), our 1.5\" Crushed (Bin #10), or the larger 1.5\"-2\" gravel (Bin #2)  is typically recommended for French drains, downspouts, and general drainage areas.",
+    "categories": ["gravel", "drainage"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Can I use sand for leveling pavers?",
+    "answer": "Yes. Screened sand such as our Masonry Sand is commonly used for leveling and bedding pavers, but it should sit on top of a properly compacted gravel base.",
+    "categories": ["gravel", "construction"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Is river rock available in different sizes?",
+    "answer": "Yes, river rock typically comes in multiple sizes ranging from small decorative pebbles to larger landscape stones.",
+    "categories": ["gravel"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+
+
+  {
+    "id": 35,
+    "question": "What’s the difference between topsoil and garden soil?",
+    "answer": "Topsoil generally refers to the top several inches of ground material and is primarily used for leveling, filling, and basic planting needs. Garden soil (such as our \"Craig's Mix\" is enriched with organic material and is better suited for vegetable beds and flower gardens.",
+    "categories": ["soil"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 36,
+    "question": "Is your compost screened?",
+    "answer": "Yes. Our compost is screened for a finer, more consistent texture that mixes easily into soil and garden beds.",
+    "categories": ["soil"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Do you sell fill dirt? Is it screened and cleaned?",
+    "answer": "We do offer topsoil for leveling, backfilling, and other structural needs, but it is NOT screened and may contain bits of clay, remnants of organic material such as grass plugs, and is generally not recommended for planting directly into without amendment. For general garden soil needs, we recommend our \"Craig's Mix\" garden soil instead.",
+    "categories": ["soil"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 38,
+    "question": "Is your topsoil safe for vegetable gardens?",
+    "answer": "We do offer topsoil for leveling, backfilling, and other structural needs, but it is NOT screened and may contain bits of clay, remnants of organic material such as grass plugs, and is generally not recommended for planting directly into without amendment. For general garden soil needs, we recommend our \"Craig's Mix\" garden soil instead.",
+    "categories": ["soil"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 39,
+    "question": "How do I know how much soil my raised bed needs?",
+    "answer": "You can use our material calculator to help estimate the cubic yards needed based on your bed’s length, width, and depth. Feel free to contact us for estimates or assistance as well.",
+    "categories": ["soil"],
+    "relatedLinks": [
+      { "text": "Material Calculator", "url": "/calculator" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 40,
+    "question": "Does your soil have rocks or debris?",
+    "answer": "Our topsoil is NOT screened and therefore may contain bits of clay and remnants of organic material such as grass plugs. It is likely more ideal for filling holes, backfilling, etc. For garden soil purposes, we recommend our \"Craig's Mix\" which is ammended with our Premium Organic Compost and is generally better suited for planting.",
+    "categories": ["soil"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+  
+
+  {
+    "id": 41,
+    "question": "Do you offer palletized stone?",
+    "answer": "Yes, we offer palletized flagstone, chopped stone, and other natural stone varieties depending on availability.",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 42,
+    "question": "Can I pick individual pieces of flagstone?",
+    "answer": "We generally sell our stone by the pallet (and is cheaper per-pound to do so), but at an additional cost we can allow customers to hand-select individual pieces, without skipping layers, depending on availability.",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 43,
+    "question": "How much does a pallet of stone weigh?",
+    "answer": "Our pallets are generally 1.75 tons to 2 tons each (that's roughly 3,500 to 4,000 pounds) depending on the type of stone and its thickness. (For example, 1\" flagstone pallets typically weigh less than 2\" flagstone pallets).",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 44,
+    "question": "Do you load pallets with a machine?",
+    "answer": "Yes. We load pallets with equipment designed for safe handling and transport.",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Do you allow customers to hand-select boulders?",
+    "answer": "We generally sell our stone by the pallet (and is cheaper per-pound to do so), but at an additional cost we can allow customers to hand-select individual boulders depending on availability. It is very important to note that some pallets cannot be hand-selected from due to the way they are stacked and packed on the pallet.",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 46,
+    "question": "What tools do I need to install flagstone?",
+    "answer": "Most installations require sand or screenings, gravel base material, a level, hammer, chisel, and landscape fabric. The exact tools depend on your project style. Ideally you would contact a professional landscaper or mason for best results.",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 47,
+    "question": "Do you offer installation services?",
+    "answer": "We provide materials only. For installation, we recommend working with a professional landscaper or contractor; we are happy to provide recommendations upon request.",
+    "categories": ["stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+  {
+    "id": 48,
+    "question": "What material should I use for drainage?",
+    "answer": "Clean, uniform gravel such as 57 Stone (our Bin #1 or Bin #10) is commonly used for drainage because it allows water to flow freely. The best choice depends on your specific project and soil conditions.",
+    "categories": ["drainage"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 49,
+    "question": "How deep should I install drainage gravel?",
+    "answer": "Depth varies based on your project, but most drainage trenches use several inches of gravel below and above the pipe. Always follow your project guidelines or consult a professional.",
+    "categories": ["drainage"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 50,
+    "question": "What’s the best gravel for French drains?",
+    "answer": "57 Stone (our Bin #1 or Bin #10) or similar clean, angular gravel is typically recommended for French drains because it provides good water flow and resists compaction.",
+    "categories": ["drainage"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 51,
+    "question": "Can you help prevent erosion on a hill?",
+    "answer": "We offer materials like gravel, stone, (and sometimes have access to erosion-control blankets and other products) that can help stabilize slopes. For structural or long-term erosion concerns, we recommend consulting a landscape professional.",
+    "categories": ["drainage", "erosion"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 52,
+    "question": "Do you sell geotextile fabric?",
+    "answer": "We sell a small variety of contractor-grade landscape fabric suitable for weed control, but for erosion control applications you may need a more specialized product (we can sometimes bring these into our store upon request.) We recommend consulting with a professional to determine the best fabric for your specific needs.",
+    "categories": ["drainage", "erosion"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+
+  {
+    "id": 53,
+    "question": "What’s the best material for walking paths?",
+    "answer": "Popular options include pea gravel, decomposed granite, and screenings. The best choice depends on whether you want a firm surface, decorative look, or low-maintenance option.",
+    "categories": ["garden", "paths"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 54,
+    "question": "What should I use under mulch to prevent weeds?",
+    "answer": "For most beds, simple soil preparation and a thick layer of mulch work well. Landscape fabric can be used in certain situations but is not always necessary.",
+    "categories": ["mulch", "garden"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Can I put gravel over grass?",
+    "answer": "It’s generally not recommended. Grass should be removed or smothered and the surface leveled before laying gravel for best results and long-term stability. However, you should consult a landscaping professional for specific advice based on your project.",
+    "categories": ["gravel", "garden"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" }
+    ]
+  },
+  {
+    "id": 56,
+    "question": "Is landscape fabric necessary?",
+    "answer": "Landscape fabric can help in some situations, but mulch alone often provides good weed control. The best option depends on your project and long-term maintenance plans. We recommend consulting a landscaping professional for specific advice.",
+    "categories": ["garden", "mulch"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" }
+    ]
+  },
+  {
+    "id": 57,
+    "question": "What’s the best soil mix for raised gardens?",
+    "answer": "Raised beds typically perform well with a blend of topsoil, compost, and organic material. Our compost and garden soil can be mixed to create a nutrient-rich growing medium, or you can use our pre-mixed \"Craig's Mix\" garden soil for convenience (please note: our Premium Organic Compost is screened and cleaned, but the topsoil is unscreened, so the overal quality of Craig's Mix depends on the quality of the unscreened topsoil at that time.)",
+    "categories": ["soil", "garden"],
+    "relatedLinks": [
+      { "text": "Material Calculator", "url": "/calculator" }
+    ]
+  },
+  {
+    "id": 58,
+    "question": "Do you sell garden stones or border rock?",
+    "answer": "Yes, we offer a variety of decorative stones, edging rock, and small boulders suitable for garden borders and landscaping projects.",
+    "categories": ["garden", "stone"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+
+  {
+    "id": 59,
+    "question": "Are your materials screened?",
+    "answer": "Our compost and most of our gravels are screened for consistency (except Blue SB2 and Arkansas Red Base). Our Topsoil is NOT screened and may contain bits of clay and remnants of organic material such as grass plugs. For garden soil purposes, we recommend our \"Craig's Mix\" which is ammended with our Premium Organic Compost and is generally better suited for planting.",
+    "categories": ["quality"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 60,
+    "question": "Is your soil blended onsite?",
+    "answer": "Most of our soils come from regional suppliers, but our Special Blend (70/30 Mix) and our Craig's Mix are blended onsite.",
+    "categories": ["quality"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Are your gravels washed?",
+    "answer": "All of our gravels are washed except Blue SB2 and Arkansas Red Base, which are unwashed and contain fines to help with compaction.",
+    "categories": ["quality"],
+    "relatedLinks": [
+      { "text": "Coverage Charts", "url": "#coverage" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 62,
+    "question": "Are colors consistent between loads?",
+    "answer": "Natural materials can vary in color depending on the quarry and season. If color consistency is important, we recommend viewing the product in person before purchasing. *IMPORTANT*: Our online pictures represent the product at that specific time and may vary from current inventory.",
+    "categories": ["quality"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 63,
+    "question": "Do you run out of materials during the year?",
+    "answer": "We stay in steady supply of most materials, but some items may have limited availability during peak seasons, or we may experience occassional delays due to logistical reasons. It’s best to contact us ahead of time for large orders or specific material needs. All supply is first-come, first-served and we cannot hold bulk materials.",
+    "categories": ["quality", "inventory"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 64,
+    "question": "Do prices change seasonally?",
+    "answer": "Prices occasionally change due to supply availability or market conditions. We aim to keep pricing stable and transparent year-round. Please call for current pricing or quotes.",
+    "categories": ["pricing"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 65,
+    "question": "What are your prices?",
+    "answer": "Please call for current pricing or quotes. Prices occasionally change due to supply availability or market conditions. We aim to keep pricing stable and transparent year-round.",
+    "categories": ["pricing"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+  {
+    "id": 65,
+    "question": "Do prices include tax?",
+    "answer": "Sales tax is added at checkout, we can give you a full total before completing your order. Please call for current pricing or quotes.",
+    "categories": ["pricing"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 66,
+    "question": "Can I get a quote over the phone?",
+    "answer": "Yes, we’re happy to give pricing and estimates over the phone. You can also use our online material calculator for coverage estimates as well to help you plan ahead.",
+    "categories": ["pricing"],
+    "relatedLinks": [
+      { "text": "Material Calculator", "url": "/calculator" },
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 67,
+    "question": "Do you offer bulk discounts?",
+    "answer": "Certain materials may qualify for quantity-based discounts. Contact us for details on large orders or contractor needs.",
+    "categories": ["pricing"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 69,
+    "question": "How do I pay for delivery?",
+    "answer": "We do not offer delivery services at this time, but we are happy to recommend local delivery companies upon request. These companies would need to be contacted, arranged, and paid for separately by the customer.",
+    "categories": ["pricing", "delivery"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 70,
+    "question": "Can I order multiple materials in one load?",
+    "answer": "Depending on the size of the truck or trailer and material weights, we may be able to accommodate multiple materials in one load. Please contact us ahead of time to discuss your specific needs and we can help coordinate the best approach.",
+    "categories": ["pricing", "delivery"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+
+
+
+
+
+  {
+    "id": 71,
+    "question": "Do you recycle old materials?",
+    "answer": "We do not accept old materials for recycling or disposal. Please contact your local waste management service for proper handling options.",
+    "categories": ["misc"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 72,
+    "question": "Do you offer samples of materials?",
+    "answer": "Yes, you may take small samples of most materials to help you compare color or texture before making a purchase.",
+    "categories": ["misc"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Do you offer landscape design advice?",
+    "answer": "We can help you choose the right materials for your project, but detailed design work is best handled by a landscape professional.",
+    "categories": ["misc"],
+    "relatedLinks": [
+      { "text": "Contact Us", "url": "/contact" }
+    ]
+  }
   ],
   "coverage": {
     "flagstone": [
