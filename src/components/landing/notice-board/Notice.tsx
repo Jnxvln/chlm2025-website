@@ -28,7 +28,7 @@ const figureColor = (type: string | undefined) => {
 		}
 	}
 
-export default component$(({ id, title, content, type, createdAt, showCreatedAt, storeClosedAt }: TNotice) => {
+export default component$(({ id, title, content, type, createdAt, showCreatedAt }: TNotice) => {
 	// Format date as MM/DD/YY
 	const formatDate = (date: Date) => {
 		const d = new Date(date);
@@ -39,21 +39,21 @@ export default component$(({ id, title, content, type, createdAt, showCreatedAt,
 	};
 
 	// Format date and time as MM/DD/YY hh:mma
-	const formatDateTime = (date: Date) => {
-		const d = new Date(date);
-		const month = String(d.getMonth() + 1).padStart(2, '0');
-		const day = String(d.getDate()).padStart(2, '0');
-		const year = String(d.getFullYear()).slice(-2);
+	// const formatDateTime = (date: Date) => {
+	// 	const d = new Date(date);
+	// 	const month = String(d.getMonth() + 1).padStart(2, '0');
+	// 	const day = String(d.getDate()).padStart(2, '0');
+	// 	const year = String(d.getFullYear()).slice(-2);
 
-		let hours = d.getHours();
-		const minutes = String(d.getMinutes()).padStart(2, '0');
-		const ampm = hours >= 12 ? 'pm' : 'am';
-		hours = hours % 12;
-		hours = hours ? hours : 12; // the hour '0' should be '12'
-		const hoursStr = String(hours).padStart(2, '0');
+	// 	let hours = d.getHours();
+	// 	const minutes = String(d.getMinutes()).padStart(2, '0');
+	// 	const ampm = hours >= 12 ? 'pm' : 'am';
+	// 	hours = hours % 12;
+	// 	hours = hours ? hours : 12; // the hour '0' should be '12'
+	// 	const hoursStr = String(hours).padStart(2, '0');
 
-		return `${month}/${day}/${year} ${hoursStr}:${minutes}${ampm}`;
-	};
+	// 	return `${month}/${day}/${year} ${hoursStr}:${minutes}${ampm}`;
+	// };
 
 	return (
 		<div key={id} class={`border border-gray-300 rounded p-4 mb-4 ${figureColor(type)}`}>
