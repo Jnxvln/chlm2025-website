@@ -510,7 +510,7 @@
     "size": "3/16\"-under",
     "bin": "3",
     "keywords": ["gravel", "crushed", "decomposed", "granite", "dg", "base", "pathway", "patio", "compactable", "packs", "natural", "drainage"],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "mat-040",

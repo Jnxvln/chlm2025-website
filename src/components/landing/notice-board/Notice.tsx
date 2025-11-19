@@ -60,7 +60,7 @@ export default component$(({ id, title, content, type, createdAt, showCreatedAt,
 			<h3 class="font-semibold text-xl mb-2">{title}</h3>
 			<p class="mb-2">{content}</p>
 			{showCreatedAt && <p class="text-sm text-gray-600">Posted on: {formatDate(createdAt)}</p>}
-			{storeClosedAt && <p class="text-sm text-gray-600">Store closed at: {formatDateTime(storeClosedAt)}</p>}
+			{/* {storeClosedAt && <p class="text-sm text-gray-600">Posted at: {formatDateTime(storeClosedAt)}</p>} */}
 		</div>
 	)
 })

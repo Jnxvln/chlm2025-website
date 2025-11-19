@@ -84,7 +84,7 @@ export default component$(({ category, name, imageUrl, description, size, bin, k
 
 				{/* Description */}
 				{description && (
-					<p class="text-gray-700 text-sm mb-3 flex-1 line-clamp-3">
+					<p class="text-gray-700 text-sm mb-3 flex-1 overflow-y-auto max-h-24">
 						{description}
 					</p>
 				)}

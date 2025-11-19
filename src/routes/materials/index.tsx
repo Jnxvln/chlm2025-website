@@ -12,7 +12,7 @@ const DEFAULT_CATEGORY = CATEGORY_ALL;
 
 export default component$(() => {
 	const location = useLocation();
-	const allMaterials: TMaterial[] = materialsData as TMaterial[];
+	const allMaterials: TMaterial[] = materialsData.filter(m => m.isActive) as TMaterial[];
 
 	// Extract unique categories from materials
 	const categories = Array.from(new Set(allMaterials.map(m => m.category))).sort();
