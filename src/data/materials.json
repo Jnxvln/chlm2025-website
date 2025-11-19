@@ -6,8 +6,8 @@
     "imageUrl": "/images/materials/Compost.webp",
     "description": "Our Premium Organic Compost is a nutrient-rich blend of chicken litter and hardwood sawdust chips, aged and processed to perfection. Ideal for vegetable gardens, flower beds, and lawn enrichment, it enhances soil structure and promotes healthy, sustainable plant growth.",
     "size": "",
-    "bin": "",
-    "keywords": ["compost", "organic", "premium", "natural", "garden", "soil", "nutrients", "fertilizer", "wood", "chicken litter"],
+    "bin": "14",
+    "keywords": ["compost", "organic", "premium", "natural", "garden", "mix", "soil", "nutrients", "fertilizer", "wood", "chicken litter"],
     "isActive": true
   },
 
@@ -24,7 +24,7 @@
     "description": "Naturally rounded and smooth from years of water shaping, Round Creek Rock adds a timeless, organic look to any landscape. Perfect for decorative beds, drainage areas, and garden borders.",
     "size": "",
     "bin": "",
-    "keywords": ["rock", "creek", "round", "decorative", "drainage", "landscape", "stone", "garden"],
+    "keywords": ["rock", "creek", "round", "decorative", "drainage", "landscape", "border", "stone", "garden"],
     "isActive": true
   },
     {
@@ -35,7 +35,7 @@
     "description": "Naturally rounded and smooth from years of water shaping, Round Creek Rock adds a timeless, organic look to any landscape. Perfect for decorative beds, drainage areas, and garden borders.",
     "size": "",
     "bin": "",
-    "keywords": ["rock", "creek", "round", "decorative", "drainage", "landscape", "stone", "garden"],
+    "keywords": ["rock", "creek", "round", "decorative", "drainage", "landscape", "stone", "border", "garden"],
     "isActive": true
   },
   {
@@ -288,9 +288,9 @@
     "name": "Cherry Blend",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped-cherryblend.jpg",
     "description": "Cherry Blend features a warm mix of pink, rustic orange, and white tones, ideal for walls, borders, and accents. Its rich color variation adds inviting character to any landscape or architectural design.",
-    "size": "",
+    "size": "4x4, 4x6",
     "bin": "",
-    "keywords": ["stone", "chopped", "cherry", "blend", "pink", "red", "orange", "rustic", "retaining", "wall", "walkway", "pathway", "borders", "colorful", "edging", "4x4", "4x6"],
+    "keywords": ["stone", "chopped", "cherry", "blend", "pink", "red", "orange", "rustic", "retaining", "wall", "walkway", "pathway", "border", "colorful", "edging", "4x4", "4x6"],
     "isActive": true
   },
   {
@@ -299,9 +299,9 @@
     "name": "Cheyenne Blue",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_cheyenneblue.jpg",
     "description": "Cheyenne Blue showcases subtle gray, brown, and blue hues that bring depth and sophistication to walls and edging. Its natural tone pairs beautifully with both modern and rustic exteriors.",
-    "size": "",
+    "size": "4x4, 4x6",
     "bin": "",
-    "keywords": ["stone", "chopped", "cheyenne", "blue", "gray", "brown", "retaining", "wall", "walkway", "pathway", "borders", "edging", "4x4", "4x6"],
+    "keywords": ["stone", "chopped", "cheyenne", "blue", "gray", "brown", "retaining", "wall", "walkway", "pathway", "border", "edging", "4x4", "4x6"],
     "isActive": true
   },
   {
@@ -310,9 +310,9 @@
     "name": "Silvermist",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_silvermistu.jpg",
     "description": "Silvermist is a stunning silvery-gray stone with cool undertones that can appear slightly blue in certain light. It’s a designer favorite for elegant retaining walls, walkways, and garden features.",
-    "size": "",
+    "size": "4x4, 4x6",
     "bin": "",
-    "keywords": ["stone", "chopped", "silvermist", "gray", "blue", "retaining", "wall", "walkway", "pathway", "borders", "edging", "4x4", "4x6"],
+    "keywords": ["stone", "chopped", "silvermist", "gray", "blue", "retaining", "wall", "walkway", "pathway", "border", "edging", "4x4", "4x6"],
     "isActive": true
   },
   {
@@ -321,9 +321,9 @@
     "name": "Chestnut",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/chopped_chestnut.jpg",
     "description": "Chestnut offers a blend of warm white, beige, and brown tones that complement natural surroundings. Perfect for edging, borders, and walls where a cozy, earthy look is desired.",
-    "size": "",
+    "size": "4x4, 4x6",
     "bin": "",
-    "keywords": ["stone", "chopped", "chestnut", "brown", "beige", "retaining", "wall", "walkway", "pathway", "borders", "edging", "4x4", "4x6"],
+    "keywords": ["stone", "chopped", "chestnut", "brown", "beige", "retaining", "wall", "walkway", "pathway", "border", "edging", "4x4", "4x6"],
     "isActive": true
   },
 
@@ -338,7 +338,7 @@
     "name": "Silvermist",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flagstone-silvermist.jpg",
     "description": "Silvermist Flagstone features soft gray tones with subtle silver-blue highlights, ideal for patios, walkways, and pool decks. Its refined color palette pairs beautifully with modern or natural designs.",
-    "size": "",
+    "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "silvermist", "gray", "blue", "patio", "walkway", "pathway", "pool"],
     "isActive": true
@@ -349,7 +349,7 @@
     "name": "Cherry Blend",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flagstone-cherryblend.jpg",
     "description": "With its pink, orange, and white undertones, Cherry Blend Flagstone adds warmth and visual interest to any outdoor space. Each piece offers unique color movement and rustic charm.",
-    "size": "",
+    "size": "1\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "cherry", "blend", "pink", "orange", "rustic", "patio", "walkway", "pathway", "garden", "pool"],
     "isActive": true
@@ -360,7 +360,7 @@
     "name": "Cheyenne Blue",
     "imageUrl": "/images/materials/Flagstone_CheyBlue.webp",
     "description": "Cheyenne Blue Flagstone offers a cool mix of blue-gray and brown hues, creating a balanced, natural look. It’s perfect for stepping stones, garden paths, and patios with a tranquil aesthetic.",
-    "size": "",
+    "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "cheyenne", "blue", "brown", "patio", "walkway", "pathway", "garden", "pool"],
     "isActive": true
@@ -371,7 +371,7 @@
     "name": "Buckskin",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/dark_buckskin_3024x3300.jpg",
     "description": "Buckskin Flagstone ranges from light beige to tan, lending a soft, sunny tone to walkways and patios. Its neutral coloring blends easily with surrounding plants and stone features.",
-    "size": "",
+    "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "buckskin", "brown", "tan", "beige", "patio", "walkway", "pathway", "garden", "pool"],
     "isActive": true
@@ -382,7 +382,7 @@
     "name": "Dark Buckskin",
     "imageUrl": "/images/materials/Flagstone_DarkBuck.webp",
     "description": "This variation of Buckskin brings deeper, chocolate-beige tones for a more dramatic and grounded look. It’s perfect for high-contrast or richly accented landscapes.",
-    "size": "",
+    "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "buckskin", "dark", "brown", "chocolate", "patio", "walkway", "pathway", "garden", "pool"],
     "isActive": true
@@ -393,7 +393,7 @@
     "name": "Palomino",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/flag_vanilla_latte_3024x3300.jpg",
     "description": "Palomino Flagstone offers pale beige and light tan hues with a clean, understated elegance. Its softer tone provides a warm, inviting look for patios and pathways.",
-    "size": "",
+    "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "palomino", "tan", "brown", "beige", "patio", "walkway", "pathway", "garden", "pool"],
     "isActive": true
@@ -411,8 +411,8 @@
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/soil-topsoil.jpg",
     "description": "Locally dug and naturally sandy with bits of clay and organic matter, our Unscreened Topsoil is a practical, affordable choice for filling and leveling. Expect occasional roots and clay balls typical of natural loam.",
     "size": "",
-    "bin": "",
-    "keywords": ["soil", "topsoil", "unscreened", "unfiltered", "local", "fill", "leveling", "loam", "clay", "dirt", "brown"],
+    "bin": "13",
+    "keywords": ["soil", "topsoil", "unscreened", "unfiltered", "local", "fill", "leveling", "loam", "clay", "dirt", "brown", "natural"],
     "isActive": true
   },
   {
@@ -422,7 +422,7 @@
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/craigs_mix_480.jpg",
     "description": "A balanced blend of Unscreened Topsoil and our Premium Organic Compost, Craig’s Mix is ideal for general gardening and flower beds. It provides nutrients and structure for healthy root growth and moisture retention.",
     "size": "",
-    "bin": "",
+    "bin": "15",
     "keywords": ["soil", "compost", "topsoil", "mix", "blend", "garden", "brown", "nutrients", "moisture"],
     "isActive": true
   },
@@ -433,8 +433,8 @@
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/special_blend_480.jpg",
     "description": "Our Special Blend combines 70% Premium Organic Compost with 30% masonry sand for excellent drainage and root development. It’s a customer favorite for lawns and sod, nutrient-rich yet quick-draining for vigorous, green growth.",
     "size": "",
-    "bin": "",
-    "keywords": ["soil", "special", "blend", "sand", "compost", "lawn", "brown", "sod", "drainage"],
+    "bin": "16",
+    "keywords": ["soil", "special", "blend", "mix", "sand", "compost", "lawn", "brown", "sod", "drainage"],
     "isActive": true
   },
   {
@@ -444,7 +444,7 @@
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/sand_mason_480.jpg",
     "description": "Our Masonry Sand is a fine, clean, screened, and consistent sand ideal for bricklaying, mortar mixing, and leveling projects. It compacts smoothly and drains well, making it a versatile choice for patios, pavers, and general construction use.",
     "size": "",
-    "bin": "",
+    "bin": "8",
     "keywords": ["sand", "masonry", "fine", "screened", "construction", "blonde", "brick", "mortar", "pavers", "leveling", "compaction", "drainage"],
     "isActive": true
   },
@@ -455,7 +455,7 @@
     "imageUrl": "/images/materials/ConcreteSand.webp",
     "description": "Concrete Sand is a coarse, multi-purpose sand with tiny gravel pieces mixed throughout, providing excellent stability and drainage. It’s ideal for concrete mixes, base layers, leveling, and other construction applications.",
     "size": "",
-    "bin": "",
+    "bin": "19",
     "keywords": ["sand", "concrete", "coarse", "construction", "blonde", "mortar", "leveling", "industrial", "compaction", "drainage"],
     "isActive": true
   },
@@ -498,7 +498,7 @@
     "description": "A larger, rounded brown gravel ranging from 1½ to 2 inches in size. Excellent for decorative landscapes, drainage, and accent areas where a natural, rustic look is desired.",
     "size": "1.5\"-2\"",
     "bin": "2",
-    "keywords": ["gravel", "smooth", "brown", "large", "decorative", "drainage", "2 inch", "landscape", "natural", "fill line", "french drain"],
+    "keywords": ["gravel", "smooth", "brown", "large", "decorative", "drainage", "2 inch", "landscape", "natural", "fill", "french drain"],
     "isActive": true
   },
   {
@@ -520,7 +520,7 @@
     "description": "Blue Fine Screenings are finely crushed Blue SB2 particles, pulverized to nearly a powder consistency. Ideal for paver bases, compacted walkways, and leveling work where a firm, smooth finish is needed.",
     "size": "3/8\"-under",
     "bin": "4",
-    "keywords": ["gravel", "screenings", "blue", "fines", "crushed", "paver base", "leveling", "pathway", "sb2", "natural"],
+    "keywords": ["gravel", "screenings", "blue", "fines", "crushed", "paver base", "leveling", "pathway", "sb2", "natural", "compactable"],
     "isActive": true
   },
   {
@@ -575,7 +575,7 @@
     "description": "Crushed Brown 1½\" gravel features angular brown stone pieces ideal for driveways, pathways, and decorative borders. Its color and texture provide excellent contrast in modern and rustic designs alike.",
     "size": "1\" to 1½\"",
     "bin": "10",
-    "keywords": ["gravel", "brown", "crushed", "driveway", "pathway", "decorative", "landscape", "natural", "drainage", "fill line", "french drain"],
+    "keywords": ["gravel", "brown", "crushed", "driveway", "pathway", "decorative", "landscape", "natural", "drainage", "border", "fill", "french drain"],
     "isActive": true
   },
   {
@@ -594,7 +594,7 @@
     "category": "gravel",
     "name": "Blue SB2",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-bluesb2.jpg",
-    "description": "Blue SB2 is a crushed blue-gray limestone blend up to 1¼\" and smaller. Commonly used for driveways, base layers, and compacted surfaces requiring excellent stability and drainage.",
+    "description": "Blue SB2 is a crushed blue-gray gravel blend roughly 1¼\" and smaller. Commonly used for driveways, base layers, and compacted surfaces requiring excellent stability and drainage.",
     "size": "1.25\"-under",
     "bin": "12",
     "keywords": ["gravel", "blue", "sb2", "crushed", "base", "driveway", "packs", "compactable"],
