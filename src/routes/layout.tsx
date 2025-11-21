@@ -13,6 +13,12 @@ export const useStoreSettings = routeLoader$(async () => {
       storeDefaultClosureReasonWeather: true,
       storeDefaultClosureReasonHoliday: true,
       storeCustomClosureMessage: true,
+      operatingHoursMonFriStart: true,
+      operatingHoursMonFriEnd: true,
+      operatingHoursSatStart: true,
+      operatingHoursSatEnd: true,
+      operatingHoursSunStart: true,
+      operatingHoursSunEnd: true,
     },
   });
   return settings;
