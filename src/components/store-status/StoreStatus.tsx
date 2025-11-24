@@ -76,7 +76,7 @@ export default component$(() => {
 
 	return (
 		<div class="flex items-center">
-			<div class="pr-2 font-bold text-white">Open:</div>
+			<div class="pr-2 font-bold text-white">{ isOpen.value == true ? 'Open' : 'Closed' }:</div>
 			<Indicator isOpen={isOpen.value} />
 		</div>
 	)
