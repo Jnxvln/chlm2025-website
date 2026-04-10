@@ -87,13 +87,13 @@ export default component$(() => {
 	return (
 		<section class="p-2 sm:p-4 bg-white">
 			<div class="flex items-center gap-2 my-4">
-				<img
-					src="https://chlm2023.herokuapp.com/static/media/eagle_logo.5788e3b09babba668f42.png"
+				{/* <img
+					src=""
 					alt="Eagle Carports"
 					width={50}
 					height={50}
 					class="flex-shrink-0"
-				/>
+				/> */}
 				<h3 class="text-xl sm:text-3xl font-bold text-blue-900">Eagle Carports</h3>
 			</div>
 
