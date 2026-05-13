@@ -493,7 +493,7 @@ export const HelpCenter = component$(() => {
             
             <p class="loading-warning">
               <strong>
-                We cannot be responsible for material lost during transport. To promote safety for all drivers on the road, please secure your load by using a tarp or trailer sides before leaving.
+                We are not responsible for material lost during transport. To promote safety for all drivers on the road, please secure your load by using a tarp or sides before leaving.
               </strong>
             </p>
           </div>
