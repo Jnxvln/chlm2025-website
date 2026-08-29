@@ -15,7 +15,6 @@
 
 
 
-
   {
     "id": "mat-002",
     "category": "creek rock",
@@ -302,7 +301,7 @@
     "size": "4x4, 4x6",
     "bin": "",
     "keywords": ["stone", "chopped", "cheyenne", "blue", "gray", "brown", "retaining", "wall", "walkway", "pathway", "border", "edging", "4x4", "4x6"],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "mat-025",
@@ -363,7 +362,7 @@
     "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "cheyenne", "blue", "brown", "patio", "walkway", "pathway", "garden", "pool"],
-    "isActive": true
+    "isActive": false
   },
   {
     "id": "mat-030",
@@ -396,7 +395,7 @@
     "size": "1\", 1.5\", 2\"",
     "bin": "",
     "keywords": ["flagstone", "stone", "palomino", "tan", "brown", "beige", "patio", "walkway", "pathway", "garden", "pool"],
-    "isActive": true
+    "isActive": false
   },
 
 
@@ -477,8 +476,30 @@
   "size": "5/8\"",
   "bin": "0",
   "keywords": ["blue", "chips", "decorative", "gravel", "small", "walkway", "patio", "clean", "screened"],
-  "isActive": true
+  "isActive": false
 },
+{
+    "id": "mat-050",
+    "category": "gravel",
+    "name": "Blue 5/8\" C-Rock",
+    "imageUrl": "/images/materials/gravel_blueCRock.jpg",
+    "description": "A small 5/8\" blue gravel that looks great for patios, walkways, and borders; cut from the same gravel as Blue SB2.",
+    "size": "5/8\"",
+    "bin": "0C",
+    "keywords": ["blue", "gravel", "chips", "decorative", "gravel", "small", "walkway", "patio", "clean", "screened"],
+    "isActive": true
+  },
+  {
+    "id": "mat-051",
+    "category": "gravel",
+    "name": "Blue 1/2\" D-Rock",
+    "imageUrl": "/images/materials/gravel_blueDRock.jpg",
+    "description": "An even smaller 1/2\" blue gravel that looks great for patios, walkways, and borders; cut from the same gravel as Blue SB2.",
+    "size": "1/2\"",
+    "bin": "0D",
+    "keywords": ["blue", "gravel", "chips", "decorative", "gravel", "small", "walkway", "patio", "clean", "screened"],
+    "isActive": true
+  },
   {
     "id": "mat-037b",
     "category": "gravel",
@@ -510,7 +531,7 @@
     "size": "3/16\"-under",
     "bin": "3",
     "keywords": ["gravel", "crushed", "decomposed", "granite", "dg", "base", "pathway", "patio", "compactable", "packs", "natural", "drainage"],
-    "isActive": false
+    "isActive": true
   },
   {
     "id": "mat-040",
@@ -527,7 +548,7 @@
     "id": "mat-041",
     "category": "gravel",
     "name": "Blue & White 2½\"",
-    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/placeholder_6g0cztw.png",
+    "imageUrl": "/images/materials/gravel_blueWhite.webp",
     "description": "Blue & White 2½\" gravel features a striking mix of light gray, blue, and white stones in larger decorative sizes. Perfect for accent landscaping, drainage areas, and erosion control projects.",
     "size": "2\" to 2.5\"",
     "bin": "5",
@@ -537,12 +558,12 @@
   {
     "id": "mat-042",
     "category": "gravel",
-    "name": "Landscape Rock",
+    "name": "Riverbend Rock",
     "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/gravel-landscapecobbles.jpg",
-    "description": "Landscape Rock consists of large, naturally rounded cobbles ranging from 4\" to 12\" and up. Ideal for decorative beds, water features, and statement landscaping pieces.",
-    "size": "4\" to 12\"+",
+    "description": "Riverbend Rock consists of large, naturally formed rock ranging from 4\" to 12\" and up. Ideal for decorative beds, water features, and statement landscaping pieces.",
+    "size": "3\" to 16\"+",
     "bin": "6",
-    "keywords": ["rock", "landscape", "cobbles", "boulders", "decorative", "garden", "large", "water feature", "natural"],
+    "keywords": ["rock", "landscape", "river", "bend", "riverbend", "boulders", "decorative", "garden", "large", "water feature", "natural"],
     "isActive": true
   },
   {
@@ -553,14 +574,14 @@
     "description": "Arkansas Red Base is a crushed red gravel blend approximately 1¼\" and smaller. It compacts tightly and adds warm color to driveways, base layers, and decorative areas.",
     "size": "1.25\"-under",
     "bin": "7",
-    "keywords": ["gravel", "arkansas", "red", "base", "crushed", "driveway", "compactable", "packs", "natural"],
+    "keywords": ["gravel", "arkansas", "ar", "red", "base", "crushed", "driveway", "compactable", "packs", "natural"],
     "isActive": true
   },
   {
     "id": "mat-044",
     "category": "gravel",
     "name": "Blue & White 6\"-under",
-    "imageUrl": "https://django-chlmweb-files.s3.us-east-2.amazonaws.com/TEST/placeholder_6g0cztw.png",
+    "imageUrl": "/images/materials/gravel_blueLargeRiverRock.webp",
     "description": "A bold mix of blue and white crushed stone ranging up to 6 inches. Excellent for erosion control, drainage swales, or large decorative rock features.",
     "size": "3\" to 6\"",
     "bin": "9",
@@ -598,6 +619,28 @@
     "size": "1.25\"-under",
     "bin": "12",
     "keywords": ["gravel", "blue", "sb2", "crushed", "base", "driveway", "packs", "compactable"],
+    "isActive": true
+  },
+  {
+    "id": "mat-048",
+    "category": "gravel",
+    "name": "Landscape Cobbles",
+    "imageUrl": "/images/materials/gravel_landscapeCobbles.jpg",
+    "description": "Landscape cobbles are beautiful, medium-sized cobbles ranging 3\" up to 16\"+, useful for flower beds, drainage, and decorative purposes.",
+    "size": "3\"-16\"+",
+    "bin": "18",
+    "keywords": ["rock", "brown", "decorative", "drainage", "flower bed", "landscape", "cobbles"],
+    "isActive": true
+  },
+  {
+    "id": "mat-049",
+    "category": "gravel",
+    "name": "Mixed 5 Gravel",
+    "imageUrl": "/images/materials/gravel_mixedFive.jpg",
+    "description": "An assorted size of gravel ranging roughy 2\" up to 5\", can be used for decorative or drainage purposes.",
+    "size": "2\"-5\"",
+    "bin": "23",
+    "keywords": ["rock", "brown", "decorative", "drainage", "flower bed", "landscape"],
     "isActive": true
   }
 ]
