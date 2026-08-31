@@ -23,7 +23,7 @@ export default component$<CategoryDropdownProps>(({ categories, selectedCategory
 				<option value="all" selected={selectedCategory.value === "all"}>All Materials</option>
 				{categories.map((category) => (
 					<option key={category} value={category} selected={selectedCategory.value === category}>
-						{toTitleCase(category)}
+						{ category.toString().toLowerCase() === "gravel" ? toTitleCase("Gravel / Rock") : toTitleCase(category)}
 					</option>
 				))}
 			</select>

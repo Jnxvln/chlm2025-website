@@ -8,7 +8,8 @@ import materialsData from "~/data/materials.json";
 import { toTitleCase } from "~/utils/utils";
 
 const CATEGORY_ALL = "all";
-const DEFAULT_CATEGORY = CATEGORY_ALL;
+const INITIAL_CATEGORY = "gravel";
+const DEFAULT_CATEGORY = INITIAL_CATEGORY;
 
 export default component$(() => {
 	const location = useLocation();
@@ -122,6 +123,11 @@ export default component$(() => {
 						</div>
 					</div>
 				</div>
+
+				{/* Call For Pricing */}
+				<span class="p-4 font-bold inline-block my-3 bg-amber-200 rounded-xl">
+					Call for pricing and availability: 903-334-7350
+				</span>
 
 				{/* Results */}
 				<div class="mb-4 text-gray-600">
