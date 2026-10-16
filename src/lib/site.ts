@@ -28,7 +28,7 @@ export const BUSINESS = {
     country: "US",
   },
   /** Profiles that represent the business (e.g. the Facebook page). Used as schema.org sameAs. */
-  sameAs: [] as string[],
+  sameAs: ["https://www.facebook.com/ChLandscapeMaterials"] as string[],
 } as const;
 
 export const ADDRESS_ONE_LINE = `${BUSINESS.address.street} ${BUSINESS.address.city}, ${BUSINESS.address.region} ${BUSINESS.address.postalCode}`;
