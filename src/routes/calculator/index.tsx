@@ -1,4 +1,6 @@
 import { component$, useSignal, useVisibleTask$, $ } from '@builder.io/qwik';
+import type { DocumentHead } from '@builder.io/qwik-city';
+import { pageHead } from '~/lib/seo';
 
 type Shape =
   | 'null'
@@ -827,4 +829,11 @@ export default component$(() => {
       </div>
     </section>
   );
+});
+
+export const head: DocumentHead = pageHead({
+  title: 'Cubic Yard Calculator',
+  description:
+    'Estimate how many cubic yards of gravel, soil, sand, compost, or mulch you need for squares, rectangles, circles, borders, triangles, and more.',
+  path: '/calculator/',
 });

@@ -94,7 +94,7 @@ export default component$(() => {
 					height={50}
 					class="flex-shrink-0"
 				/> */}
-				<h3 class="text-xl sm:text-3xl font-bold text-blue-900">Eagle Carports</h3>
+				<h2 class="text-xl sm:text-3xl font-bold text-blue-900">Eagle Carports</h2>
 			</div>
 
 			<div class="flex flex-col lg:flex-row gap-4">

@@ -84,7 +84,7 @@ export default component$(() => {
 
 	return (
 		<div class="px-8 py-12 bg-orange-100">
-			<h3 class="font-bold text-2xl mb-3">Materials Overview</h3>
+			<h2 class="font-bold text-2xl mb-3">Materials Overview</h2>
 			<div class="my-4">To help you find what you're looking for, we've grouped our materials into categories:</div>
 			{/* Categories: Soil, Gravel, Stone, and Mulch */}
 			<div class="grid-container">

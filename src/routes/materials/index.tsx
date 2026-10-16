@@ -1,11 +1,13 @@
-import { component$, useSignal, useComputed$, useVisibleTask$, $ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { component$, useSignal, useComputed$, useTask$, $ } from "@builder.io/qwik";
+import { useLocation, type DocumentHead } from "@builder.io/qwik-city";
 import type { TMaterial } from "~/components/materials/Material";
 import Material from "~/components/materials/Material";
 import CategoryDropdown from "~/components/materials/CategoryDropdown";
 import KeywordSearch from "~/components/materials/KeywordSearch";
 import materialsData from "~/data/materials.json";
 import { toTitleCase } from "~/utils/utils";
+import { pageHead } from "~/lib/seo";
+import { BUSINESS, PHONE_HREF } from "~/lib/site";
 
 const CATEGORY_ALL = "all";
 const INITIAL_CATEGORY = "gravel";
@@ -32,21 +34,17 @@ export default component$(() => {
 		searchTerm.value = keyword;
 	});
 
-	// Set initial category from URL and handle URL changes
-	useVisibleTask$(({ track }) => {
-		// Get category from URL query parameter
-		const urlCategory = location.url.searchParams.get('category');
+	// Set category from the URL. useTask$ runs during server render too, so
+	// /materials?category=mulch is real mulch HTML on first load (and for
+	// crawlers), and it re-runs on client-side navigation.
+	useTask$(({ track }) => {
+		const urlCategory = track(() => location.url.searchParams.get("category"));
 
-		// Validate and set category
-		if (urlCategory && categories.includes(urlCategory)) {
+		if (urlCategory === CATEGORY_ALL || (urlCategory && categories.includes(urlCategory))) {
 			selectedCategory.value = urlCategory;
-		} else if (!urlCategory) {
-			// Only default to gravel if no URL parameter is present
+		} else {
 			selectedCategory.value = DEFAULT_CATEGORY;
 		}
-
-		// Track URL changes
-		track(() => location.url.href);
 	});
 
 	// Computed filtered materials
@@ -126,7 +124,8 @@ export default component$(() => {
 
 				{/* Call For Pricing */}
 				<span class="p-4 font-bold inline-block my-3 bg-amber-200 rounded-xl">
-					Call for pricing and availability: 903-334-7350
+					Call for pricing and availability:{" "}
+					<a href={PHONE_HREF} class="underline hover:no-underline">{BUSINESS.phone.display}</a>
 				</span>
 
 				{/* Results */}
@@ -181,3 +180,10 @@ export default component$(() => {
 		</div>
 	);
 })
+
+export const head: DocumentHead = pageHead({
+	title: "Materials",
+	description:
+		"Browse bulk gravel, rock, soil, compost, mulch, flagstone, chopped stone, boulders, and creek rock at C&H Landscape Materials in Texarkana, TX.",
+	path: "/materials/",
+});

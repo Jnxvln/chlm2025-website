@@ -1,11 +1,8 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import StoreStatus from "../store-status/StoreStatus";
+import { BUSINESS, ADDRESS_ONE_LINE, PHONE_HREF, MAPS_HREF } from "~/lib/site";
 
 export default component$(() => {
-
-	const storeAddress = useSignal<string>("5725 W 7th St. Texarkana, TX 75501");
-	const storePhone = useSignal<string>("903-334-7350")
-
 	return (
 		<header class="relative h-60 overflow-hidden">
 			{/* Background Image with Overlay */}
@@ -35,9 +32,18 @@ export default component$(() => {
 
 				{/* Contact Info */}
 				<div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-slate-900/40 backdrop-blur-sm px-3 py-2 rounded">
-					<address class="not-italic text-white/90 text-xs sm:text-sm text-center">{storeAddress.value}</address>
-					<div class="text-amber-400 hidden sm:block">•</div>
-					<div class="text-white/90 text-xs sm:text-sm">{storePhone.value}</div>
+					<a
+						href={MAPS_HREF}
+						target="_blank"
+						rel="noopener"
+						class="text-white/90 text-xs sm:text-sm text-center hover:text-amber-300"
+					>
+						{ADDRESS_ONE_LINE}
+					</a>
+					<div class="text-amber-400 hidden sm:block" aria-hidden="true">•</div>
+					<a href={PHONE_HREF} class="text-white/90 text-xs sm:text-sm font-semibold hover:text-amber-300">
+						{BUSINESS.phone.display}
+					</a>
 				</div>
 			</div>
 		</header>
