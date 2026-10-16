@@ -17,6 +17,7 @@ import render from "./entry.ssr";
 import express from "express";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
+import { SITE_ORIGIN } from "./lib/site";
 
 declare global {
   type QwikCityPlatform = PlatformNode;
@@ -47,6 +48,35 @@ const { router, notFound } = createQwikCity({
 // Create the express server
 // https://expressjs.com/
 const app = express();
+
+/**
+ * Send alternate hostnames to the canonical one with a 301, so search engines
+ * see one site instead of duplicates. Only known aliases are redirected:
+ *   - the www / non-www twin of the canonical host
+ *   - the *.up.railway.app service URL
+ * Anything else (localhost, Railway health checks) passes through untouched.
+ * While PUBLIC_SITE_ORIGIN is still the Railway URL, this does nothing.
+ */
+const canonicalHost = new URL(SITE_ORIGIN).host.toLowerCase();
+const twinHost = canonicalHost.startsWith("www.")
+  ? canonicalHost.slice(4)
+  : `www.${canonicalHost}`;
+const canonicalIsRailway = canonicalHost.endsWith(".up.railway.app");
+
+app.use((req, res, next) => {
+  const forwarded = req.headers["x-forwarded-host"];
+  const rawHost = (Array.isArray(forwarded) ? forwarded[0] : forwarded) ?? req.headers.host ?? "";
+  const host = rawHost.split(",")[0].trim().toLowerCase();
+
+  const isAlias =
+    host === twinHost || (!canonicalIsRailway && host.endsWith(".up.railway.app"));
+
+  if (isAlias) {
+    res.redirect(301, `${SITE_ORIGIN}${req.originalUrl}`);
+    return;
+  }
+  next();
+});
 
 // Enable gzip compression
 // app.use(compression());

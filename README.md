@@ -57,3 +57,10 @@ pnpm dev               # http://localhost:3000
 ## Deployment (Railway)
 
 Build command `pnpm build`, start command `pnpm start`. The Express server serves `dist/` (hashed assets cached for a year) and SSR pages via Qwik City.
+
+### Custom domain
+
+`PUBLIC_SITE_ORIGIN` is the single switch for the public domain. When it's set to a custom domain, `src/entry.express.tsx` 301-redirects the `www.`/non-`www` twin and the `*.up.railway.app` URL to it. While it's unset or still the Railway URL, nothing redirects.
+
+Order matters: get the custom domain serving the site in Railway first, then set `PUBLIC_SITE_ORIGIN` and redeploy. Setting it first would redirect visitors to a domain that doesn't resolve yet.
+
