@@ -113,7 +113,7 @@ export default component$(({ category, name, imageUrl, description, size, bin, k
 		{/* Image Modal */}
 		{isModalOpen.value && (
 			<div
-				class="fixed inset-0 z-[1001] bg-black bg-opacity-90 flex items-center justify-center p-4"
+				class="fixed inset-0 z-[1001] bg-black/90 flex items-center justify-center p-4"
 				onClick$={() => isModalOpen.value = false}
 			>
 				{/* Close button */}
@@ -137,7 +137,7 @@ export default component$(({ category, name, imageUrl, description, size, bin, k
 
 				{/* Image title */}
 				<div class="absolute bottom-4 left-4 right-4 text-white text-center">
-					<p class="text-lg font-semibold bg-black bg-opacity-50 px-4 py-2 rounded inline-block">
+					<p class="text-lg font-semibold bg-black/50 px-4 py-2 rounded inline-block">
 						{name}
 					</p>
 				</div>
