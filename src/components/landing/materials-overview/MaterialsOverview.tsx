@@ -94,7 +94,7 @@ export default component$(() => {
 				<a href="/materials?category=gravel">
 					<div class="slot gravel">Gravel</div>
 				</a>
-				<a href="/materials?category=stone">
+				<a href="/materials?category=flagstone">
 					<div class="slot stone">Stone</div>
 				</a>
 				<a href="/materials?category=mulch">
