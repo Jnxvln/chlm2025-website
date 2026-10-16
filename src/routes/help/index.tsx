@@ -1,7 +1,9 @@
-import { component$, useSignal, useComputed$, $, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useComputed$, $ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import './help-center.css';
 import helpData from '~/data/help.json';
+import { pageHead } from '~/lib/seo';
+import { BUSINESS, PHONE_HREF } from '~/lib/site';
 
 // Type definitions
 interface FAQItem {
@@ -22,16 +24,56 @@ interface CoverageItem {
   linearFeet?: string;
 }
 
-export const HelpCenter = component$(() => {
-  // State management
-  const searchQuery = useSignal('');
-  const storePhone = useSignal('903-334-7350');
-  const selectedFaq = useSignal<FAQItem | null>(null);
-  const scrollY = useSignal(0);
-  const showScrollTop = useSignal(false);
+const CATEGORY_LABELS: Record<string, string> = {
+  general: 'General',
+  pricing: 'Pricing',
+  payment: 'Payment',
+  delivery: 'Delivery',
+  loading: 'Loading & Hauling',
+  coverage: 'Coverage & Quantities',
+  gravel: 'Gravel & Rock',
+  stone: 'Stone',
+  soil: 'Soil',
+  mulch: 'Mulch',
+  garden: 'Gardening',
+  paths: 'Paths & Walkways',
+  drainage: 'Drainage',
+  erosion: 'Erosion Control',
+  construction: 'Construction',
+  inventory: 'Inventory',
+  quality: 'Quality',
+  misc: 'Other',
+};
 
-  // FAQ Data - Loaded from JSON
-  const faqs = useSignal<FAQItem[]>(helpData.faqs as FAQItem[]);
+// Display order; anything not listed sorts alphabetically before "misc".
+const CATEGORY_ORDER = ['general', 'pricing', 'payment', 'delivery', 'loading', 'coverage'];
+
+const categoryRank = (c: string) => {
+  if (c === 'misc') return 1000;
+  const i = CATEGORY_ORDER.indexOf(c);
+  return i === -1 ? 100 : i;
+};
+
+const categoryLabel = (c: string) =>
+  CATEGORY_LABELS[c] ?? c.charAt(0).toUpperCase() + c.slice(1);
+
+/** Group FAQs by their first (primary) category, in display order. */
+function groupFaqs(faqs: FAQItem[]) {
+  const groups = new Map<string, FAQItem[]>();
+  for (const faq of faqs) {
+    const cat = faq.categories[0] ?? 'misc';
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat)!.push(faq);
+  }
+  return [...groups.entries()]
+    .sort(([a], [b]) => categoryRank(a) - categoryRank(b) || a.localeCompare(b))
+    .map(([category, items]) => ({ category, items }));
+}
+
+const ALL_FAQS = helpData.faqs as FAQItem[];
+
+export const HelpCenter = component$(() => {
+  const searchQuery = useSignal('');
 
   // Coverage data - Loaded from JSON
   const coverageFlagstone: CoverageItem[] = helpData.coverage.flagstone as CoverageItem[];
@@ -39,42 +81,27 @@ export const HelpCenter = component$(() => {
   const coverageRiverRock: CoverageItem[] = helpData.coverage.riverRock as CoverageItem[];
   const coverageWaterfall: CoverageItem[] = helpData.coverage.waterfall as CoverageItem[];
 
-  // Filtered FAQs based on search
-  const filteredFaqs = useComputed$(() => {
-    if (!searchQuery.value.trim()) {
-      return faqs.value;
-    }
-    return faqs.value.filter(faq => 
-      faq.question.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchQuery.value.toLowerCase())
-    );
+  // Every FAQ is rendered on the server; search only narrows the list.
+  const faqGroups = useComputed$(() => {
+    const q = searchQuery.value.trim().toLowerCase();
+    const matches = q
+      ? ALL_FAQS.filter(
+          (faq) =>
+            faq.question.toLowerCase().includes(q) ||
+            faq.answer.toLowerCase().includes(q),
+        )
+      : ALL_FAQS;
+    return { count: matches.length, groups: groupFaqs(matches) };
   });
 
-  // Track scroll position
-  useVisibleTask$(({ cleanup }) => {
-    const handleScroll = () => {
-      scrollY.value = window.scrollY;
-      showScrollTop.value = window.scrollY > 50;
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    cleanup(() => window.removeEventListener('scroll', handleScroll));
-  });
-
-  // Clear search
   const clearSearch = $(() => {
     searchQuery.value = '';
-    selectedFaq.value = null;
   });
 
-  // Select FAQ
-  const selectFaq = $((faq: FAQItem) => {
-    selectedFaq.value = faq;
-    searchQuery.value = faq.question;
-  });
+  const isSearching = searchQuery.value.trim().length > 0;
 
   return (
-    <main class="help-main-section">
+    <div class="help-main-section">
       {/* Page Header */}
       <header class="help-header">
         <div class="header-overlay"></div>
@@ -82,61 +109,68 @@ export const HelpCenter = component$(() => {
         <h1 class="header-title">Help Center</h1>
       </header>
 
-      {/* Question Search Bar */}
-      <section class="question-bar">
+      {/* Frequently Asked Questions */}
+      <section class="question-bar" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="faq-heading">Frequently Asked Questions</h2>
+
         <div class="help-search-wrapper">
           <div class="search-input-wrapper">
+            <label for="faq-search" class="sr-only">Search frequently asked questions</label>
             <input
-              type="text"
+              id="faq-search"
+              type="search"
               class="help-search-input"
-              placeholder="Search for help..."
+              placeholder="Search questions, e.g. trailer, mulch, payment..."
               value={searchQuery.value}
               onInput$={(e) => {
                 searchQuery.value = (e.target as HTMLInputElement).value;
-                selectedFaq.value = null;
               }}
             />
-            {searchQuery.value && (
-              <div class="search-suggestions">
-                {filteredFaqs.value.slice(0, 5).map((faq) => (
-                  <div
-                    key={faq.id}
-                    class="suggestion-item"
-                    onClick$={() => selectFaq(faq)}
-                  >
-                    {faq.question}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
-          <button class="search-button" aria-label="Search">
-            Search
-          </button>
-          {searchQuery.value && (
-            <button class="clear-search-button" onClick$={clearSearch}>
+          {isSearching && (
+            <button type="button" class="clear-search-button" onClick$={clearSearch}>
               Clear
             </button>
           )}
         </div>
 
-        {/* Display selected FAQ */}
-        {selectedFaq.value && (
-          <div class="response-area">
-            <h2 class="display-question">{selectedFaq.value.question}</h2>
-            <p class="display-answer">{selectedFaq.value.answer}</p>
-            {selectedFaq.value.relatedLinks && selectedFaq.value.relatedLinks.length > 0 && (
-              <div class="related-links">
-                <h3>Related Links:</h3>
-                {selectedFaq.value.relatedLinks.map((link, index) => (
-                  <div key={index} class="help-related-link">
-                    <a href={link.url}>{link.text}</a>
+        <p class="faq-count" aria-live="polite">
+          {isSearching
+            ? `${faqGroups.value.count} ${faqGroups.value.count === 1 ? 'question matches' : 'questions match'} your search`
+            : `${faqGroups.value.count} questions`}
+        </p>
+
+        <div class="faq-list">
+          {faqGroups.value.groups.map((group) => (
+            <div key={group.category} class="faq-group">
+              <h3 class="faq-group-title">{categoryLabel(group.category)}</h3>
+              {group.items.map((faq) => (
+                <details key={faq.id} class="faq-item" open={isSearching}>
+                  <summary class="faq-question">{faq.question}</summary>
+                  <div class="faq-answer">
+                    <p>{faq.answer}</p>
+                    {faq.relatedLinks && faq.relatedLinks.length > 0 && (
+                      <ul class="faq-links">
+                        {faq.relatedLinks.map((link) => (
+                          <li key={link.url}>
+                            <a href={link.url}>{link.text}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+                </details>
+              ))}
+            </div>
+          ))}
+
+          {faqGroups.value.count === 0 && (
+            <p class="faq-empty">
+              No questions match that search. Try a different word, or call us at{' '}
+              <a href={PHONE_HREF}>{BUSINESS.phone.display}</a>.
+            </p>
+          )}
+        </div>
       </section>
 
       {/* General Information Section */}
@@ -144,11 +178,12 @@ export const HelpCenter = component$(() => {
         <header class="general-info-header">
           <div class="general-info-background"></div>
           <div class="general-info-overlay"></div>
-          <h1 class="general-info-title section-title">GENERAL INFORMATION</h1>
+          <h2 class="general-info-title section-title">GENERAL INFORMATION</h2>
         </header>
 
         <div class="call-for-pricing">
-          For pricing information, please call us at {storePhone.value}
+          For pricing information, please call us at{' '}
+          <a href={PHONE_HREF}>{BUSINESS.phone.display}</a>
         </div>
 
         <div class="material-types-container">
@@ -231,15 +266,15 @@ export const HelpCenter = component$(() => {
 
       {/* Weights Section */}
       <section id="weights" class="weights-section">
-        <h1 class="section-title">WEIGHTS</h1>
+        <h2 class="section-title">WEIGHTS</h2>
         
         <div class="weights-content">
           <div class="weight-conversions">
-            <h2 class="weight-subtitle">CONVERSIONS</h2>
+            <h3 class="weight-subtitle">CONVERSIONS</h3>
             <p class="weight-info">1 cubic yard = 27 cubic feet</p>
             <p class="weight-info">1 ton = 2,000 pounds</p>
             
-            <h3 class="weight-category">Typical Weight per Cubic Yard:</h3>
+            <h4 class="weight-category">Typical Weight per Cubic Yard:</h4>
             <ul class="weight-list">
               <li><strong>Topsoil:</strong> 2,000 - 2,700 lbs</li>
               <li><strong>Sand (dry):</strong> 2,600 - 3,000 lbs</li>
@@ -254,11 +289,11 @@ export const HelpCenter = component$(() => {
 
       {/* Coverage Section */}
       <section id="coverage" class="coverage-section">
-        <h1 class="section-title">COVERAGE</h1>
+        <h2 class="section-title">COVERAGE</h2>
         
         {/* Flagstone Coverage */}
         <div class="coverage-subsection">
-          <h2 class="coverage-section-title">PALLETIZED STONE COVERAGE</h2>
+          <h3 class="coverage-section-title">PALLETIZED STONE COVERAGE</h3>
           <div class="coverage-divider"></div>
           
           <div class="coverage-subtitle">
@@ -369,7 +404,7 @@ export const HelpCenter = component$(() => {
 
         {/* Bulk Materials Coverage */}
         <div class="coverage-subsection">
-          <h2 class="coverage-section-title">BULK MATERIALS COVERAGE</h2>
+          <h3 class="coverage-section-title">BULK MATERIALS COVERAGE</h3>
           <div class="coverage-divider"></div>
           
           <div class="coverage-subtitle">
@@ -438,7 +473,7 @@ export const HelpCenter = component$(() => {
       {/* Loading Information Section */}
       <section id="loading" class="loading-info-section">
         <header>
-          <h1 class="section-title">LOADING INFO</h1>
+          <h2 class="section-title">LOADING INFO</h2>
         </header>
 
         <div class="loading-info-subsection">
@@ -499,18 +534,15 @@ export const HelpCenter = component$(() => {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 });
 
 export default HelpCenter;
 
-export const head: DocumentHead = {
-  title: 'Help Center',
-  meta: [
-    {
-      name: 'description',
-      content: 'Find answers to frequently asked questions, coverage charts, and loading information.',
-    },
-  ],
-};
+export const head: DocumentHead = pageHead({
+  title: 'Help Center & FAQ',
+  description:
+    'Answers to common questions about landscape materials, plus coverage charts, material weights, and what fits in your truck or trailer at C&H Landscape Materials.',
+  path: '/help/',
+});
