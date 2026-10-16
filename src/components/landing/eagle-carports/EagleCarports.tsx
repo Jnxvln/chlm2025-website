@@ -26,8 +26,8 @@ export default component$(() => {
 			imagePath: "/images/carports/cp_triple.webp"
 		},
 		{
-			id: "commerical",
-			name: "Commerical",
+			id: "commercial",
+			name: "Commercial",
 			size: "32'w to 40'w",
 			description: "Need extra-wide buildings? Commercial grade features come default with 8' legs and include the following: 14-gauge galvanized steel truss system with industry leading tubular knee bracing, 29-gauge metal roofing with 20 year Beckers paint system, framing spaced 5' on center, concrete anchors or earth auger anchors are included in the base price. Eagle Carports, Inc. is not responsible for stopping, or repairing leaks under base rails, nor provides any site work.",
 			imagePath: "/images/carports/cp_commercial.webp"
@@ -43,7 +43,7 @@ export default component$(() => {
 			id: "rvcover",
 			name: "RV Cover",
 			size: "",
-			description: "Protecting tall assets such as RV's can be a real challange, but Eagle has metal structures designed specifically for this case. The RV covers come standard with 15' legs and include the following: 14-gauge galvanized steel framing, 29-gauge metal roofing with 20 year Beckers paint system, framing spaced 5' on center, double base rail, double legs, includes both peak and leg brancing for additional strength and stability. Concrete anchors or rebar anchors, and earth auger anchors are included in the base price. Please note, Eagle Carports, inc. does not provide site work.",
+			description: "Protecting tall assets such as RV's can be a real challenge, but Eagle has metal structures designed specifically for this case. The RV covers come standard with 15' legs and include the following: 14-gauge galvanized steel framing, 29-gauge metal roofing with 20 year Beckers paint system, framing spaced 5' on center, double base rail, double legs, includes both peak and leg bracing for additional strength and stability. Concrete anchors or rebar anchors, and earth auger anchors are included in the base price. Please note, Eagle Carports, inc. does not provide site work.",
 			imagePath: "/images/carports/cp_rvcover.webp"
 		},
 		{
@@ -54,7 +54,7 @@ export default component$(() => {
 			imagePath: "/images/carports/cp_combo.webp"
 		},
 		{
-			id: "hosebarn",
+			id: "horsebarn",
 			name: "Horse Barn",
 			size: "",
 			description: "Standard horse barn structures include the following: 14-gauge galvanized steel framing, 29-gauge metal roofing with 20 year Beckers paint system, framing spaced 5' on center. Horse barn packages include both peak and leg bracing for additional strength and stability. Packages also include gable ends on both front and back of the barn, on both center section and lean-to's. Concrete anchors or rebar anchors, and earth auger anchors are included in the base price. Eagle Carports, Inc. is not responsible for stopping, or repairing leaks under base rails, nor provides any site work.",
@@ -71,7 +71,7 @@ export default component$(() => {
 			id: "loafingshed",
 			name: "Loafing Shed",
 			size: "",
-			description: "Eagle's standard loafing sheds' standard leg height varies by size and include the following: 14-gauge galvanized steel framing, 29-gauage metal roofing with 20 year Beckers paint system, framing spaced 5' on center. Loafing shed packages include leg bracing for additional strength and stability. Packages also include concrete anchors or rebar anchors, and earth auger anchors in the base price. Please note, Eagle Carports, inc. does not provide site work.",
+			description: "Eagle's standard loafing sheds' standard leg height varies by size and include the following: 14-gauge galvanized steel framing, 29-gauge metal roofing with 20 year Beckers paint system, framing spaced 5' on center. Loafing shed packages include leg bracing for additional strength and stability. Packages also include concrete anchors or rebar anchors, and earth auger anchors in the base price. Please note, Eagle Carports, inc. does not provide site work.",
 			imagePath: "/images/carports/cp_loafingshed.webp"
 		},
 	])
