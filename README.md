@@ -22,6 +22,8 @@ The site reads store settings and notices from the **CHLM Dashboard's** PostgreS
 | Materials catalog | `src/data/materials.json` (images in `public/images/materials/`) |
 | Help Center FAQs and coverage tables | `src/data/help.json` |
 | Eagle Carports styles | `src/components/landing/eagle-carports/EagleCarports.tsx` |
+| Phone, address, site URL | `src/lib/site.ts` |
+| Pages listed in the sitemap | `src/routes/sitemap.xml/index.ts` |
 
 ## Setup
 
@@ -40,6 +42,7 @@ pnpm dev               # http://localhost:3000
 |---|---|
 | `DATABASE_URL` | PostgreSQL connection string for the dashboard DB (read-only role) |
 | `PORT` | Production server port (defaults to 3000; Railway sets this) |
+| `PUBLIC_SITE_ORIGIN` | Public URL used for canonical tags, Open Graph, `robots.txt`, and `sitemap.xml` (no trailing slash). **Build-time**: changing it requires a redeploy. Defaults to the Railway URL. |
 
 ## Scripts
 
