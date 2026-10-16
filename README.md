@@ -1,75 +1,56 @@
-# Qwik City App ⚡️
+# C&H Landscape Materials — Website
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+The public website for C&H Landscape Materials in Texarkana, TX: materials catalog, cubic-yard calculator, help center, contact info, and live store status/closure notices.
 
----
+Built with [Qwik City](https://qwik.dev/) (SSR, Express adapter), Tailwind CSS 4, and Prisma 6. Deployed on Railway.
 
-## Project Structure
+## Shared database — read this first
 
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+The site reads store settings and notices from the **CHLM Dashboard's** PostgreSQL database. The dashboard owns that database and all of its migrations.
 
-Inside your project, you'll see the following directory structure:
+- `prisma/schema.prisma` here declares only the tables the website reads (`Settings`, `StoreNotice`).
+- **Never run `prisma db push` or `prisma migrate` from this repo.** Prisma would treat every dashboard table missing from this schema as something to drop.
+- New tables are created through the dashboard repo's migrations, then copied into this schema read-only.
+- In production, `DATABASE_URL` should use a read-only role with `SELECT` on just the tables the site reads.
 
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
+## Where content lives
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
+| Content | Source |
+|---|---|
+| Store open/closed, closure messages, operating hours | `Settings` table (managed in the dashboard) |
+| Homepage notices | `StoreNotice` table (managed in the dashboard) |
+| Materials catalog | `src/data/materials.json` (images in `public/images/materials/`) |
+| Help Center FAQs and coverage tables | `src/data/help.json` |
+| Eagle Carports styles | `src/components/landing/eagle-carports/EagleCarports.tsx` |
 
-- `src/components`: Recommended directory for components.
+## Setup
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+Requires Node (version in `package.json` `engines`) and pnpm.
 
-## Add Integrations and deployment
-
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-pnpm qwik add # or `pnpm qwik add`
+```bash
+pnpm install
+echo "DATABASE_URL=postgresql://..." > .env
+pnpm prisma:generate
+pnpm dev               # http://localhost:3000
 ```
 
-## Development
+### Environment variables
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+| Variable | Purpose |
+|---|---|
+| `DATABASE_URL` | PostgreSQL connection string for the dashboard DB (read-only role) |
+| `PORT` | Production server port (defaults to 3000; Railway sets this) |
 
-```shell
-npm start # or `pnpm start`
-```
+## Scripts
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+| Command | What it does |
+|---|---|
+| `pnpm dev` | Vite dev server with SSR |
+| `pnpm build` | `prisma generate`, then full Qwik build (type check, client, server) |
+| `pnpm start` | Run the production Express server from `server/` |
+| `pnpm build.types` | Type check only |
+| `pnpm lint` / `pnpm fmt` | ESLint / Prettier |
 
-## Preview
+## Deployment (Railway)
 
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-pnpm preview # or `pnpm preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-pnpm build # or `pnpm build`
-```
-
-## Express Server
-
-This app has a minimal [Express server](https://expressjs.com/) implementation. After running a full build, you can preview the build using the command:
-
-```
-pnpm serve
-```
-
-Then visit [http://localhost:8080/](http://localhost:8080/)
+Build command `pnpm build`, start command `pnpm start`. The Express server serves `dist/` (hashed assets cached for a year) and SSR pages via Qwik City.
