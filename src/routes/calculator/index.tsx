@@ -91,6 +91,7 @@ export default component$(() => {
   const inputUnits = useSignal<Record<string, Metric>>({});
   const quantity = useSignal('1');
   const result = useSignal<number | null>(null);
+  const errorMsg = useSignal<string | null>(null);
   const canvasRef = useSignal<HTMLCanvasElement>();
 
   // Handle unit change with conversion
@@ -132,6 +133,7 @@ export default component$(() => {
     }
 
     result.value = null;
+    errorMsg.value = null;
   });
 
   // Calculate volume in cubic yards
@@ -141,14 +143,37 @@ export default component$(() => {
     const values: Record<string, number> = {};
     const fields = shapeInputs[shapeChosen.value];
 
+    result.value = null;
+    errorMsg.value = null;
+
     // Convert all inputs to feet
     for (const field of fields) {
       const value = parseFloat(inputValues.value[field.name] || '0');
-      const unit = inputUnits.value[field.name];
+      // Fall back to the field's default unit so a missing entry can't produce NaN
+      const unit = inputUnits.value[field.name] ?? field.defaultUnit;
+      if (!Number.isFinite(value) || value <= 0) {
+        errorMsg.value = `Please enter a ${field.label.toLowerCase()} greater than zero.`;
+        return;
+      }
       values[field.name] = value * unitToFeet[unit];
     }
 
-    const qty = parseFloat(quantity.value) || 1;
+    // Shape-specific sanity checks
+    if (shapeChosen.value === 'triangle') {
+      const { sideA, sideB, sideC } = values;
+      if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA) {
+        errorMsg.value =
+          "Those three sides can't form a triangle. Any two sides together must be longer than the third.";
+        return;
+      }
+    }
+    if (shapeChosen.value === 'annulus' && values.outerDiameter <= values.innerDiameter) {
+      errorMsg.value = 'The outer diameter must be larger than the inner diameter.';
+      return;
+    }
+
+    const parsedQty = parseFloat(quantity.value);
+    const qty = Number.isFinite(parsedQty) && parsedQty > 0 ? parsedQty : 1;
     let area = 0;
 
     switch (shapeChosen.value) {
@@ -215,9 +240,18 @@ export default component$(() => {
   // Clear all inputs
   const clearInputs = $(() => {
     inputValues.value = {};
-    inputUnits.value = {};
+    // Reset units to the current shape's defaults rather than emptying them;
+    // the selects display the defaults, so calculate() must see them too.
+    const defaults: Record<string, Metric> = {};
+    if (shapeChosen.value !== 'null') {
+      for (const field of shapeInputs[shapeChosen.value]) {
+        defaults[field.name] = field.defaultUnit;
+      }
+    }
+    inputUnits.value = defaults;
     quantity.value = '1';
     result.value = null;
+    errorMsg.value = null;
   });
 
   // Draw shape on canvas
@@ -736,6 +770,16 @@ export default component$(() => {
                   </div>
                 )}
               </form>
+
+              {/* Validation Error */}
+              {errorMsg.value && (
+                <div
+                  role="alert"
+                  class="mt-6 p-4 rounded-lg bg-red-50 border-2 border-red-400 text-red-800 font-medium"
+                >
+                  {errorMsg.value}
+                </div>
+              )}
 
               {/* Results Display */}
               {result.value !== null && (() => {
