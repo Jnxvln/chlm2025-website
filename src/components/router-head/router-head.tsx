@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
+import { absoluteUrl } from "~/lib/site";
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
@@ -8,11 +9,16 @@ export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
 
+  // One canonical per page: fixed public origin + path, no query string.
+  // (loc.url reflects the internal request, which behind Railway's proxy can be
+  // http:// and includes ?category=... etc.)
+  const canonical = absoluteUrl(loc.url.pathname);
+
   return (
     <>
       <title>{head.title}</title>
 
-      <link rel="canonical" href={loc.url.href} />
+      <link rel="canonical" href={canonical} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/png" href="/favicon.png" />
 
