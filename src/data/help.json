@@ -3,7 +3,7 @@
     {
       "id": 1,
       "question": "What are your hours of operation?",
-      "answer": "Spring hours (March-October) we are open 8am-12pm Mon-Fri and 8am-12pm Saturday. Fall hours (Nov-Feb) we're open 8am-12pm Mon-Fri and closed on Saturdays. You can always view our current hours on the Contact page.",
+      "answer": "Spring hours (March-October) we are open 8am-5pm Mon-Fri and 8am-12pm Saturday. Fall hours (Nov-Feb) we're open 8am-5pm Mon-Fri and closed on Saturdays. Hours can change with the weather, so check the Contact page for current hours and the homepage for closure notices.",
       "categories": ["general"],
       "relatedLinks": [
         { "text": "Contact Us", "url": "/contact" }
@@ -71,19 +71,13 @@
       "id": 9,
       "question": "Do you have a public restroom available?",
       "answer": "We do not have a public restroom available on site at this time.",
-      "categories": ["general"],
-      "relatedLinks": [
-        { "text": "", "url": "" }
-      ]
+      "categories": ["general"]
     },
     {
       "id": 10,
       "question": "Are pets allowed on the property?",
       "answer": "For safety reasons, pets are not allowed due to active loading equipment on the yard. If you bring a pet, they must remain in your vehicle at all times.",
-      "categories": ["general"],
-      "relatedLinks": [
-        { "text": "", "url": "" }
-      ]
+      "categories": ["general"]
     },
     {
       "id": 11,
