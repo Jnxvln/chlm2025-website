@@ -26,7 +26,7 @@ export const useNotices = routeLoader$(async ({ resolveValue }) => {
   });
 
   // Reuse the layout's Settings query instead of hitting the DB twice
-  const { settings } = await resolveValue(useStoreSettings);
+  const { settings, seasonalNotice } = await resolveValue(useStoreSettings);
 
   // If store is closed, create a closure notice
   const allNotices: TNotice[] = [...notices];
@@ -63,6 +63,24 @@ export const useNotices = routeLoader$(async ({ resolveValue }) => {
     };
 
     allNotices.unshift(closureNotice);
+  }
+
+  // Seasonal Saturday closure notice (computed from Settings, never stored).
+  // Goes after a manual closure notice, before posted notices.
+  if (seasonalNotice) {
+    const seasonalTNotice: TNotice = {
+      id: -2,
+      title: "Saturday Hours",
+      content: seasonalNotice.message,
+      type: seasonalNotice.type,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      displayUntil: seasonalNotice.lastDay,
+      showCreatedAt: false,
+      isActive: true,
+    };
+    const afterClosure = allNotices[0]?.id === -1 ? 1 : 0;
+    allNotices.splice(afterClosure, 0, seasonalTNotice);
   }
 
   return allNotices;

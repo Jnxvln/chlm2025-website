@@ -23,7 +23,7 @@ datasource db {
 }
 
 // Only the store-facing columns are declared. Prisma reads just these, so the
-// dashboard-only columns (driver pay rates, off-duty reasons, UI theme) stay out
+// dashboard-only columns (driver pay rates, off-duty reasons) stay out
 // of this app entirely.
 model Settings {
   id                               Int       @id @default(autoincrement())
@@ -43,6 +43,20 @@ model Settings {
   storeClosureType                 String    @default("default")
   storeCustomClosureMessage        String?
   storeClosedAt                    DateTime?
+
+  // Seasonal Saturday closure (rules live in src/lib/seasonal.ts, shared
+  // verbatim with the dashboard, which owns these columns)
+  seasonalEnabled           Boolean   @default(false)
+  seasonalOverrideSeason    Int?
+  seasonalCloseDate         DateTime? @db.Date
+  seasonalReopenDate        DateTime? @db.Date
+  seasonalLeadDays          Int       @default(30)
+  seasonalReopenedDays      Int       @default(30)
+  seasonalMsgUpcomingClose  String?
+  seasonalMsgClosed         String?
+  seasonalMsgUpcomingReopen String?
+  seasonalMsgReopened       String?
+  seasonalHiddenNotices     String[]  @default([])
 }
 
 model StoreNotice {

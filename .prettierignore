@@ -35,3 +35,6 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 server
+
+# Shared with the CHLM Dashboard repo; keep byte-identical with its copy
+src/lib/seasonal.ts

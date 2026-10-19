@@ -4,6 +4,8 @@
  * the visitor's or the server's (Railway runs in UTC).
  */
 
+import { addDays, formatShortDate, storeToday, type SeasonalStatus } from "./seasonal";
+
 export const STORE_TIME_ZONE = "America/Chicago";
 
 export type StoreHours = {
@@ -14,6 +16,8 @@ export type StoreHours = {
   operatingHoursSatEnd?: string | null;
   operatingHoursSunStart?: string | null;
   operatingHoursSunEnd?: string | null;
+  /** Set by applySeasonalClosure, e.g. "Mar 6", while Saturdays are closed. */
+  saturdayClosedUntil?: string | null;
 };
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -77,11 +81,49 @@ export function formatRange(start: string | null | undefined, end: string | null
   return `${formatTime(start!)} - ${formatTime(end!)}`;
 }
 
+/** The coming Saturday (today, if it is Saturday), in store time. */
+function upcomingSaturday(now: Date): Date {
+  const today = storeToday(now);
+  return addDays(today, (6 - today.getUTCDay() + 7) % 7);
+}
+
+/**
+ * Store hours with the seasonal Saturday closure applied. While the coming
+ * Saturday falls inside the closure, Saturday hours become CLOSED, so the
+ * Open/Closed status, the Contact page and the structured data all agree.
+ * Looking at the coming Saturday (not just today) means the Contact page is
+ * already right on the Friday before the closure starts or ends.
+ *
+ * @example
+ * const effective = applySeasonalClosure(settings, getSeasonalStatus(settings));
+ * isStoreOpen(effective);
+ */
+export function applySeasonalClosure<T extends StoreHours>(
+  hours: T,
+  seasonal: SeasonalStatus,
+  now: Date = new Date(),
+): T {
+  if (!seasonal.enabled) return hours;
+  const saturday = upcomingSaturday(now);
+  if (saturday < seasonal.closeDate || saturday >= seasonal.reopenDate) return hours;
+  return {
+    ...hours,
+    operatingHoursSatStart: "CLOSED",
+    operatingHoursSatEnd: "CLOSED",
+    saturdayClosedUntil: formatShortDate(seasonal.reopenDate),
+  };
+}
+
 /** Display rows for the Contact page. */
 export function weeklyHours(hours: StoreHours): { label: string; value: string }[] {
   return [
     { label: "Mon-Fri", value: formatRange(hours.operatingHoursMonFriStart, hours.operatingHoursMonFriEnd) },
-    { label: "Saturday", value: formatRange(hours.operatingHoursSatStart, hours.operatingHoursSatEnd) },
+    {
+      label: "Saturday",
+      value: hours.saturdayClosedUntil
+        ? `Closed until ${hours.saturdayClosedUntil}`
+        : formatRange(hours.operatingHoursSatStart, hours.operatingHoursSatEnd),
+    },
     { label: "Sunday", value: formatRange(hours.operatingHoursSunStart, hours.operatingHoursSunEnd) },
   ];
 }

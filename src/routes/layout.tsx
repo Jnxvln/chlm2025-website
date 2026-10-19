@@ -3,7 +3,8 @@ import { routeLoader$, type DocumentHead } from "@builder.io/qwik-city";
 import SiteHeader from "~/components/site-header/site-header";
 import Navbar from "~/components/navbar/Navbar";
 import { prisma } from "~/lib/prisma";
-import { isStoreOpen, parseTime, type StoreHours } from "~/lib/hours";
+import { applySeasonalClosure, isStoreOpen, parseTime, type StoreHours } from "~/lib/hours";
+import { getSeasonalStatus } from "~/lib/seasonal";
 import {
   BUSINESS,
   ADDRESS_ONE_LINE,
@@ -15,7 +16,7 @@ import {
 } from "~/lib/site";
 
 export const useStoreSettings = routeLoader$(async () => {
-  const settings = await prisma.settings.findFirst({
+  const stored = await prisma.settings.findFirst({
     select: {
       storeOpen: true,
       storeClosedAt: true,
@@ -30,11 +31,27 @@ export const useStoreSettings = routeLoader$(async () => {
       operatingHoursSatEnd: true,
       operatingHoursSunStart: true,
       operatingHoursSunEnd: true,
+      seasonalEnabled: true,
+      seasonalOverrideSeason: true,
+      seasonalCloseDate: true,
+      seasonalReopenDate: true,
+      seasonalLeadDays: true,
+      seasonalReopenedDays: true,
+      seasonalMsgUpcomingClose: true,
+      seasonalMsgClosed: true,
+      seasonalMsgUpcomingReopen: true,
+      seasonalMsgReopened: true,
+      seasonalHiddenNotices: true,
     },
   });
 
+  // Seasonal Saturday closure, computed from the dashboard's settings
+  const seasonal = stored ? getSeasonalStatus(stored) : null;
+  const settings = stored && seasonal ? applySeasonalClosure(stored, seasonal) : stored;
+
   return {
     settings,
+    seasonalNotice: seasonal?.notice ?? null,
     // Computed on the server in store time so the first paint (and crawlers,
     // and visitors in other time zones) see the correct status.
     isOpenNow: isStoreOpen(settings),
