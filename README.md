@@ -31,17 +31,21 @@ Requires Node (version in `package.json` `engines`) and pnpm.
 
 ```bash
 pnpm install
-echo "DATABASE_URL=postgresql://..." > .env
+cp .env.example .env   # then set DATABASE_URL (see the comments in the file)
 pnpm prisma:generate
 pnpm dev               # http://localhost:3000
 ```
 
 ### Environment variables
 
+Every variable is documented in `.env.example`. Locally, only `DATABASE_URL` is needed.
+
 | Variable | Purpose |
 |---|---|
-| `DATABASE_URL` | PostgreSQL connection string for the dashboard DB (read-only role) |
+| `DATABASE_URL` | PostgreSQL connection string for the dashboard DB, which this site only reads. Locally: the sandbox (Dev-Database) public URL. On Railway: production. |
 | `PORT` | Production server port (defaults to 3000; Railway sets this) |
+| `ORIGIN` | The site's own origin for Qwik City's Node middleware (behind Railway's proxy). Same value as `PUBLIC_SITE_ORIGIN`. Railway only. |
+| `CACHE_BUST` | Not read by the app. Railway only; changing it forces a fresh deploy. |
 | `PUBLIC_SITE_ORIGIN` | Public URL used for canonical tags, Open Graph, `robots.txt`, and `sitemap.xml` (no trailing slash). **Build-time**: changing it requires a redeploy. Defaults to the Railway URL. |
 
 ## Scripts
